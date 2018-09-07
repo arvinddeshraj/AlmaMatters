@@ -1,0 +1,22 @@
+{
+  "name": "almamatters",
+  "version": "0.0.1",
+  "description": "IIITS's alumini nework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvinddeshraj/AlmaMatters.git"
+  },
+  "keywords": [
+    "Alumni"
+  ],
+  "author": "Famous Five",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arvinddeshraj/AlmaMatters/issues"
+  },
+  "homepage": "https://github.com/arvinddeshraj/AlmaMatters#readme"
+}
