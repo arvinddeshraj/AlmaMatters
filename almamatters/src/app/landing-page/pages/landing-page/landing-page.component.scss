@@ -1,0 +1,35 @@
+/*
+ * This is the styles sheet for the landing page.
+*/
+
+// The container is basically a full box covering the entire window.
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+// This is the style for the text ALMA.
+.alma { 
+    color: white;
+    font-size: 40px;
+}
+
+// This is a pseudo element which we use for reveal effect
+.alma-content::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00f0b5;
+  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+
+.matters {
+     color: white;
+     font-size: 40px;
+     margin-left: 80px;
+}
