@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+ - 8.11.4
+branches:
+ - *
+before_script:
+ - "npm i"
+script:
+ - "npm run test"

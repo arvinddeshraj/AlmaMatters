@@ -2,9 +2,11 @@
   "name": "almamatters",
   "version": "0.0.1",
   "description": "IIITS's alumini nework",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "exit 0",
+    "dev": "concurrently --kill-others \"tsc -w -p src\" \"nodemon dist/index.js\"",
+    "serve": "concurrently --kill-others \"tsc -p src\" \"node dist/index.js\""
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/arvinddeshraj/AlmaMatters/issues"
   },
-  "homepage": "https://github.com/arvinddeshraj/AlmaMatters#readme"
+  "homepage": "https://github.com/arvinddeshraj/AlmaMatters#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "concurrently": "^4.0.1",
+    "node-ts": "^2.1.2",
+    "ts-node": "^7.0.1"
+  }
 }
