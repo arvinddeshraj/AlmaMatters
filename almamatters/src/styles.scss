@@ -8,3 +8,49 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+.loading {
+    color: pink;
+    margin: 0 auto;
+    animation-name: example2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    width: 140px;
+    margin: 50px auto;
+    font-size: 150%;
+    font-weight: 600;
+}
+.loading::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+        @keyframes example {
+    0%   {background-color:rgb(252, 71, 71); left:0px; top:0px;transform:rotate(0deg)}
+    12.5%  {background-color:rgb(255, 0, 119); left:0px; top:0px;width:140px;transform:rotate(0deg)}
+    25%  {background-color:purple; left:130px; top:0px;width:10px;transform:rotate(0deg)}
+    37.5%  {background-color:blue; left:130px; top:0px;width:10px;transform:rotate(180deg)}
+    50%  {background-color:purple; left:130px; top:0px;width:10px;transform:rotate(0deg)}
+    62.5%  {background-color:rgb(255, 0, 119); left:0px; top:0px;width:140px;transform:rotate(0deg)}
+    75%   {background-color:rgb(252, 71, 71); left:0px; top:0px;width:10px;transform:rotate(0deg)}
+    87.5% {background-color:rgb(248, 24, 24); left:0px; top:0px;width:10px;transform:rotate(180deg)}
+    100% { background-color:rgb(252, 71, 71); left:0px; top:0px;width:10px;transform:rotate(0deg) }
+}
+
+        @keyframes example2 {
+    0%   {color:rgb(252, 71, 71);}
+    12.5%  {color:rgb(255, 0, 119);}
+    25%  {color:purple; left:200px;}
+    37.5%  {color:blue; left:200px;}
+    50%  {color:purple; left:200px;}
+    62.5%  {color:rgb(255, 0, 119);}
+    75%   {color:rgb(252, 71, 71); }
+    87.5% {color:rgb(248, 24, 24); }
+    100% {color:rgb(252, 71, 71); }
+}

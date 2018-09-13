@@ -6,30 +6,97 @@
 .container {
     height: 100%;
     width: 100%;
-    background-color: black;
+    // background-color: rgb(43, 43, 43);
 }
 
-// This is the style for the text ALMA.
-.alma { 
-    color: white;
-    font-size: 40px;
+// This is the style for the text Alma Matters.
+.rev-block {
+  position: absolute;
+}
+
+.rev-block span {
+  opacity: 0;
+  animation: appear-text 0.0001s linear forwards;
+  animation-delay: .4s;
 }
 
 // This is a pseudo element which we use for reveal effect
-.alma-content::after {
+.rev-block:after {
   content: '';
   top: 0;
   left: 0;
   position: absolute;
-  width: 100%;
+  width: 0%;
   height: 100%;
   background: #00f0b5;
   animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  animation-delay: 1s;
+  animation-delay: 0s;
 }
 
-.matters {
-     color: white;
-     font-size: 40px;
-     margin-left: 80px;
+@keyframes rev-block {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+
+  50% {
+    left: 0;
+    width: 100%;
+  }
+
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+@keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+h1 {
+  font-family: Poppins;
+  font-weight: bold;
+  color: #fff;
+  font-size: 42px;
+  text-transform: uppercase;
+  padding: 0.4em 1em;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#onemore {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#onemore span {
+  animation-delay: 2s;
+}
+
+#onemore.rev-block:after {
+  background: #5e239d;
+  animation-delay: 1.4s;
+}
+
+/*
+ * Media Query 
+ */
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 20px;
+    padding: 0.4em;
+  }
 }
