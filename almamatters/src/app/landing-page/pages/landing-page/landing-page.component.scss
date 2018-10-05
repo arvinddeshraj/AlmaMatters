@@ -13,7 +13,11 @@
 .rev-block {
   position: absolute;
 }
-
+.zup-zup{
+  -webkit-clip-path: polygon(100% 0, 47% 52%, 100% 100%, 50% 100%, 0 54%, 60% 0);
+  clip-path: polygon(100% 0, 47% 52%, 100% 100%, 50% 100%, 0 54%, 60% 0);
+  background-color: #00f0b5;
+}
 .rev-block span {
   opacity: 0;
   animation: appear-text 0.0001s linear forwards;
