@@ -1,0 +1,9 @@
+@import '../../../../theme';
+
+.tab {
+    color: white;
+    border-radius: 2px;
+    &:hover {
+        background-color: mat-color($mat-app-accent, 500);
+    }
+}
