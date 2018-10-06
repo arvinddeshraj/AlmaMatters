@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardComponent } from './dashboard.component';
+import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +9,10 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      imports: [
+        MatToolbarModule
+      ],
+      declarations: [ DashboardComponent, TopBarComponent ]
     })
     .compileComponents();
   }));
