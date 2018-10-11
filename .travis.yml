@@ -19,8 +19,8 @@ script:
 notifications:
   email:
     recipients:
-	   - arvind.deshraj@gmail.com
-	   - srijanreddy98@gmail.com
-	   - rutvikvijjali30@gmail.com
-	   - yadagallajaswanthkumar98@gmail.com
-	   - rohan.s16@iiits.in
+     - arvind.deshraj@gmail.com
+     - srijanreddy98@gmail.com
+     - rutvikvijjali30@gmail.com
+     - yadagallajaswanthkumar98@gmail.com
+     - rohan.s16@iiits.in
