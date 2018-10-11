@@ -13,6 +13,7 @@ const main = async () => {
     table.number('post_id');
     table.number('user_id');
     table.timestamps();
+  });
 };
 
 main().then(_ => console.log('done!!!'))
