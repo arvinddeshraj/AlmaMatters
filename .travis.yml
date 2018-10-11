@@ -1,0 +1,26 @@
+sudo: required
+addons:
+  chrome: stable
+
+language: node_js
+node_js:
+ - 8.11.4
+branches:
+  only:
+    - /.*/
+before_script:
+ - npm i
+ - cd almamatters && npm install -g @angular/cli && npm i && cd ../
+script:
+ - npm run test
+ - cd almamatters
+ - ng build --prod
+ - ng test
+notifications:
+  email:
+    recipients:
+     - arvind.deshraj@gmail.com
+     - srijanreddy98@gmail.com
+     - rutvikvijjali30@gmail.com
+     - yadagallajaswanthkumar98@gmail.com
+     - rohan.s16@iiits.in
