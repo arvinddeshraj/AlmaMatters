@@ -8,6 +8,11 @@ const main = async () => {
     table.string('name');
     table.timestamps();
   });
+  await KnexConnection.schema.createTable('posts', table => {
+    table.increments();
+    table.number('post_id');
+    table.number('user_id');
+    table.timestamps();
 };
 
 main().then(_ => console.log('done!!!'))
