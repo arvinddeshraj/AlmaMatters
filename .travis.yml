@@ -10,7 +10,7 @@ branches:
     - /.*/
 before_script:
  - npm i
- - cd almamatters && npm install -g @angular/cli && npm i && cd ../
+ - cd frontend && npm install -g @angular/cli && npm i && cd ../
 script:
  - npm run test
  - cd frontend
