@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LeftbarPostComponent } from './leftbar-post.component';
+import { CommonModule } from '@angular/common';
 
 describe('LeftbarPostComponent', () => {
   let component: LeftbarPostComponent;
@@ -8,6 +9,9 @@ describe('LeftbarPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CommonModule
+      ],
       declarations: [ LeftbarPostComponent ]
     })
     .compileComponents();

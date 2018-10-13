@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { LeftbarComponent } from '../../components/leftbar/leftbar.component';
 import { LeftbarPostComponent } from '../../components/leftbar-post/leftbar-post.component';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -12,7 +13,8 @@ describe('DashboardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        MatToolbarModule
+        MatToolbarModule,
+        MatIconModule
       ],
       declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent ]
     })
