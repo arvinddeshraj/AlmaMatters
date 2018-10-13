@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardComponent } from './dashboard.component';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { LeftbarComponent } from '../../components/leftbar/leftbar.component';
+import { LeftbarPostComponent } from '../../components/leftbar-post/leftbar-post.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -13,7 +14,7 @@ describe('DashboardComponent', () => {
       imports: [
         MatToolbarModule
       ],
-      declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent ]
+      declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent ]
     })
     .compileComponents();
   }));
