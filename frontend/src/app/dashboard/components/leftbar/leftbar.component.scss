@@ -1,0 +1,13 @@
+@import '../../../../theme'; 
+
+.search {
+    margin: 12px;
+    padding: 12px;
+    color: mat-color($mat-app-primary, 300);
+}
+
+.divider {
+    background-color: mat-color($mat-app-primary, 50);
+    height: 1px;
+    width: 100%;
+}

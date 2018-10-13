@@ -1,0 +1,24 @@
+<!-- <div class="meter">
+  <div class="circle"></div>
+</div> -->
+<div fxLayout="row">
+  <div fxFlex="20" fxLayoutAlign="center start">
+    <div class="ko-progress-circle" [attr.data-progress]="progress">
+      <div class="ko-circle">
+        <div class="full ko-progress-circle__slice">
+          <div class="ko-progress-circle__fill"></div>
+        </div>
+        <div class="ko-progress-circle__slice">
+          <div class="ko-progress-circle__fill"></div>
+          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+        </div>
+      </div>
+      <div class="ko-progress-circle__overlay"></div>
+    </div>
+  </div>
+  <div fxLayout = "column" fxFlex = "80" fxLayoutAlign = "start start" style="padding:0 0 0 4px">
+    <div class = "heading">{{heading}}</div>
+    <br>
+    <div class = "post-content">{{content}}</div>
+  </div>
+</div>
