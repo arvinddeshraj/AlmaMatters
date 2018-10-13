@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardComponent } from './dashboard.component';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
+import { LeftbarComponent } from '../../components/leftbar/leftbar.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -12,7 +13,7 @@ describe('DashboardComponent', () => {
       imports: [
         MatToolbarModule
       ],
-      declarations: [ DashboardComponent, TopBarComponent ]
+      declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent ]
     })
     .compileComponents();
   }));
