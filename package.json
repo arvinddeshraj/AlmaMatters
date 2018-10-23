@@ -4,7 +4,9 @@
   "description": "IIITS's alumini nework",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "exit 0",
+    "test": "jest --detectOpenHandles",
+    "tester": "jest --detectOpenHandles --watch",
+    "migrate": "tsc --lib ES2015 src/models/migrate.ts && node src/models/migrate.js",
     "dev": "concurrently --kill-others \"tsc -w -p src\" \"nodemon dist/index.js\"",
     "serve": "concurrently --kill-others \"tsc -p src\" \"node dist/index.js\""
   },
@@ -27,9 +29,14 @@
     "mysql": "^2.16.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.3",
     "@types/node": "^10.9.4",
     "concurrently": "^4.0.1",
+    "jest": "^23.6.0",
     "node-ts": "^2.1.2",
-    "ts-node": "^7.0.1"
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
   }
 }

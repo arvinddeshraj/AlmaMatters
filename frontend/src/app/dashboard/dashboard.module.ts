@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeftbarComponent } from './components/leftbar/leftbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import { LeftbarPostComponent } from './components/leftbar-post/leftbar-post.component';
+import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { LeftbarPostComponent } from './components/leftbar-post/leftbar-post.com
     FlexLayoutModule,
     MatIconModule
   ],
-  declarations: [DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent]
+  declarations: [DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]
 })
 export class DashboardModule { }

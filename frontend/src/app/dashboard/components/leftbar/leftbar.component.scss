@@ -1,13 +1,22 @@
 @import '../../../../theme'; 
 
 .search {
-    margin: 12px;
-    padding: 12px;
+    // margin: 12px;
+    padding: 24px;
     color: mat-color($mat-app-primary, 300);
+}
+
+.card {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 .divider {
     background-color: mat-color($mat-app-primary, 50);
     height: 1px;
     width: 100%;
+}
+
+.posts {
+    transition: all cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
+    width: auto;
 }
