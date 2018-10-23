@@ -7,5 +7,6 @@ export default new Map<string, Function>([
     ['/', defaultRoutes],
     ['/user', authRoutes],
     ['/api', apiRoutes],
-    ['/post', postRoutes]
+    ['/post', postRoutes],
+    ['/event', eventRoutes]
 ]);
