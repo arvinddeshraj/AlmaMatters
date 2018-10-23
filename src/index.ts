@@ -5,7 +5,7 @@ import routes from './routes';
 
 import knexConnection from './models/connection';
 
-knexConnection('numbers').where({ id: 1 }).select('*').then(_ => console.log(_))
+// knexConnection('numbers').where({ id: 1 }).select('*').then(_ => console.log(_))
 
 const privateKey = readFileSync(path.join(__dirname, '../domain.key'));
 const certificate = readFileSync(path.join(__dirname, '../domain.crt'));
