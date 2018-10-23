@@ -2,6 +2,8 @@
 # Backup files
 *~
 
+package-lock.json
+
 # compiled output
 /dist
 /tmp
