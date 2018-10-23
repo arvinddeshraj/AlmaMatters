@@ -10,7 +10,7 @@ branches:
     - /.*/
 before_script:
  - npm i
- - cd frontend && npm install -g @angular/cli && npm i && mv -f canReportError.d.ts node_modules/rxjs/internal/util/canReportError.d.ts && cd ../
+ - cd frontend && npm install -g @angular/cli && npm i && mv -f ../canReportError.d.ts node_modules/rxjs/internal/util/canReportError.d.ts && cd ../
 script:
  - npm run test
  - cd frontend
