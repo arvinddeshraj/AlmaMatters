@@ -5,6 +5,7 @@ import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { LeftbarComponent } from '../../components/leftbar/leftbar.component';
 import { LeftbarPostComponent } from '../../components/leftbar-post/leftbar-post.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MainDashboardComponent } from '../../components/main-dashboard/main-dashboard.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -16,7 +17,7 @@ describe('DashboardComponent', () => {
         MatToolbarModule,
         MatIconModule
       ],
-      declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent ]
+      declarations: [ DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent ]
     })
     .compileComponents();
   }));
