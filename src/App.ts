@@ -1,6 +1,7 @@
 import { createServer as httpsServer, ServerOptions, Server as sServer } from 'https';
 import { createServer as httpServer, Server as Server } from 'http';
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 
 export default class App {
   private port: number = Number(process.env.PORT) || 3000;
@@ -14,6 +15,8 @@ export default class App {
    */
   constructor(credentials: ServerOptions, name: string = 'Alma Matters') {
     this.app = express();
+    this.app.use(bodyParser.json({parameterLimit:1000000, limit:'50mb', extended:true}))
+    this.app.use(bodyParser.urlencoded({parameterLimit:1000000, limit:'50mb', extended:true}))
     this.https = httpsServer(credentials, this.app);
     this.http = httpServer(this.app);
     this.app.set('name', name);

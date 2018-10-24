@@ -1,12 +1,12 @@
 import defaultRoutes from './defaultRoutes';
 import authRoutes from './authRoutes';
 import apiRoutes from './apiRoutes';
-import postRoutes from './apiRoutes';
+import postRoutes from './postRoutes';
 
 export default new Map<string, Function>([
     ['/', defaultRoutes],
     ['/user', authRoutes],
-    ['/api', apiRoutes],
     ['/post', postRoutes],
-    ['/event', eventRoutes]
+    ['/api', apiRoutes],
+    //['/event', eventRoutes]
 ]);
