@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leftbar.component.scss']
 })
 export class LeftbarComponent implements OnInit {
+  expandedPosts = true;
+  expandedUnpublished = true;
   posts = [{
     progress: 70,
     heading: 'Opening for deno devs',

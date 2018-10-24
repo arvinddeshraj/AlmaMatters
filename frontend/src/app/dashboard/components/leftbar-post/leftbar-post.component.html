@@ -1,7 +1,7 @@
 <!-- <div class="meter">
   <div class="circle"></div>
 </div> -->
-<div fxLayout="row">
+<div fxLayout="row" [style.height] = "show ? 'auto' : '0'" *ngIf = "show">
   <div fxFlex="20" fxLayoutAlign="center start">
     <div class="ko-progress-circle" [attr.data-progress]="progress">
       <div class="ko-circle">

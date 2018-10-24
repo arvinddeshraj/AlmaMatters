@@ -15,6 +15,7 @@ export class LeftbarPostComponent implements OnInit {
     heading: '',
     content: ''
   }; 
+  @Input() show: boolean = true;
   ngOnInit() {
     setTimeout(() => {
       this.progress = this.post.progress;

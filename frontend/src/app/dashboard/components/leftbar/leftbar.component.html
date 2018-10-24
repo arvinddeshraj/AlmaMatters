@@ -9,24 +9,26 @@
     </div>
   </div>
   <div class="divider"></div>
-  <div fxLayout="row" fxLayoutAlign="start center" class="search">
+  <div fxLayout="row" (click) = "expandedPosts = !expandedPosts" fxLayoutAlign="start center" [ngClass]="{'search': true ,'card': !expandedPosts } ">
     <span style="margin:0 0 0 8px">Recent</span>
     <span fxLayoutAlign="center center">
-      <mat-icon>expand_more</mat-icon>
+      <mat-icon *ngIf = "!expandedPosts">expand_more</mat-icon>
+      <mat-icon *ngIf = "expandedPosts">expand_less</mat-icon>
     </span>
   </div>
-  <div class="divider"></div>
-  <div *ngFor="let post of posts">
-    <app-leftbar-post [post]="post" style="margin:32px 12px;"></app-leftbar-post>
-    <div class="divider"></div>
+  <div *ngIf = "expandedPosts" class="divider"></div>
+  <div *ngFor="let post of posts" class="posts" [style.height] = 'auto'>
+    <app-leftbar-post *ngIf = "expandedPosts"  [post]="post" style="margin:32px 12px;"></app-leftbar-post>
+    <div *ngIf = "expandedPosts" class="divider"></div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="start center" class="search">
+  <div fxLayout="row" fxLayoutAlign="start center" [ngClass]="{'search': true ,'card': !expandedUnpublished } ">
     <span style="margin:0 0 0 8px">Unpublished</span>
     <span fxLayoutAlign="center center">
-      <mat-icon>expand_more</mat-icon>
+      <mat-icon *ngIf = "!expandedUnpublished">expand_more</mat-icon>      
+      <mat-icon *ngIf = "expandedUnpublished">expand_less</mat-icon>
     </span>
   </div>
-  <div class="divider"></div>
+  <div *ngIf = "expandedUnpublished" class="divider"></div>
   <div *ngFor="let post of unpublished">
     <app-leftbar-post [post]="post" style="margin:32px 12px;"></app-leftbar-post>
     <div class="divider"></div>
