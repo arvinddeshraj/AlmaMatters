@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './reducers/user.reducer';
+
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { AppComponent } from './app.component';
 import { Route, RouterModule } from '@angular/router';
@@ -23,6 +27,9 @@ const appRoutes = [{
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({
+      user: userReducer
+    }),
     LandingPageModule,
     DashboardModule,
     RouterModule.forRoot(appRoutes)
