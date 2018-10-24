@@ -15,10 +15,7 @@ import { MainDashboardComponent } from './components/main-dashboard/main-dashboa
     FlexLayoutModule,
     MatIconModule
   ],
-<<<<<<< HEAD
-  declarations: [DashboardComponent, LeftbarComponent, LeftbarPostComponent]
-=======
-  declarations: [DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]
->>>>>>> frontend/dashboard
+
+  declarations: [DashboardComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]
 })
 export class DashboardModule { }
