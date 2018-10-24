@@ -1,0 +1,89 @@
+@import '../../../../theme';
+.meter { 
+    height: 20px;  /* Can be anything */
+    width: 20px;
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.meter > .circle {
+    display: block;
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    box-shadow: 
+      inset 0 2px 9px  rgba(255,255,255,0.3),
+      inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+.header {
+    font-size: 120%;
+}
+
+.post-content {
+    color: mat-color($mat-app-primary, 400)
+}
+
+$circle-size: 32px;
+$circle-background: #D9D9D9;
+$circle-color: #1291D4;
+$inset-size: 24px;
+$inset-color: #fbfbfb;
+$transition-length: 1s;
+
+.ko-progress-circle {
+	// margin: 20px auto;
+	width:  $circle-size;
+	height: $circle-size;
+
+	background-color: $circle-background;
+	border-radius: 50%;
+		.ko-progress-circle__slice, .ko-progress-circle__fill {
+			width:    $circle-size;
+			height:   $circle-size;
+			position: absolute;
+			-webkit-backface-visibility: hidden;
+			transition: transform $transition-length;
+			border-radius: 50%;
+		}
+		.ko-progress-circle__slice {
+			clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+			.ko-progress-circle__fill {
+				clip: rect(0px, $circle-size/2, $circle-size, 0px);
+				background-color: $circle-color;
+			}
+	}
+	.ko-progress-circle__overlay {
+		width:       $inset-size;
+		height:      $inset-size;
+		position:    absolute;
+		margin-left: ($circle-size - $inset-size)/2;
+		margin-top:  ($circle-size - $inset-size)/2;
+
+		background-color: $inset-color;
+		border-radius: 50%;
+	}
+
+	$i: 0;
+	$increment: 180deg / 100;
+	@while $i <= 100 {
+		&[data-progress='#{$i}'] {
+				.ko-progress-circle__slice.full, .ko-progress-circle__fill {
+          transform: rotate($increment * $i);
+				}	
+				.ko-progress-circle__fill.ko-progress-circle__bar {
+					transform: rotate($increment * $i * 2);
+				}
+      $i: $i + 1;
+		}
+	}
+}

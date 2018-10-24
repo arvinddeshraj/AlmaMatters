@@ -14,5 +14,5 @@ const credentials = { key: privateKey, cert: certificate };
 
 const app = new App(credentials);
 
-app.route(routes)
-   .serve();
+export default app.route(routes)
+                  .serve();

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LeftbarComponent } from './leftbar.component';
+import { MatIconModule } from '@angular/material/icon';
+import { LeftbarPostComponent } from '../leftbar-post/leftbar-post.component';
+import { CommonModule } from '@angular/common';
 
 describe('LeftbarComponent', () => {
   let component: LeftbarComponent;
@@ -8,7 +11,11 @@ describe('LeftbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftbarComponent ]
+      imports : [
+        MatIconModule,
+        CommonModule
+      ],
+      declarations: [ LeftbarComponent, LeftbarPostComponent ]
     })
     .compileComponents();
   }));

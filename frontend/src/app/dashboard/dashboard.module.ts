@@ -5,13 +5,17 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeftbarComponent } from './components/leftbar/leftbar.component';
+import {MatIconModule} from '@angular/material/icon';
+import { LeftbarPostComponent } from './components/leftbar-post/leftbar-post.component';
+import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ],
-  declarations: [DashboardComponent, TopBarComponent, LeftbarComponent]
+  declarations: [DashboardComponent, TopBarComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]
 })
 export class DashboardModule { }
