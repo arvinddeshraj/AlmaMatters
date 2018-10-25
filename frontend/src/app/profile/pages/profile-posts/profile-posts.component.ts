@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../../../services/profile.service';
 
 @Component({
   selector: 'app-profile-posts',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePostsComponent implements OnInit {
 
-  constructor() { }
-  arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-  User = "Srijan"
+  constructor(private profileService : ProfileService) { }
+  posts = []
+  User = ""
   ngOnInit() {
+    this.profileService.getProfilePosts(localStorage.getItem('x-auth')).subscribe(
+      res => {
+        console.log(res);
+        this.posts = JSON.parse(JSON.stringify(res));
+        this.User = this.posts[0].first_name;
+      },
+      err => console.log(err)
+    )
   }
 
 }
