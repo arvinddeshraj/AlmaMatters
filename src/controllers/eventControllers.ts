@@ -2,7 +2,8 @@ import knexConnection from '../models/connection';
 
 // Add  a new event to the MySQL db
 const createEvent = async (req, res) => {
-	const { userId, event_tit, st_date, end_date, description  } = req.body;
+	const userId = req.user['roll_no'];
+	const { event_tit, st_date, end_date, description  } = req.body;
   	const addPostResult = await knexConnection('EVENTS').insert({ roll_no: userId,event_title: event_tit, start_date: st_date, stop_date: end_date, desc: description });
 	// Media will contain link to the storage where they are hosted. Yet to be implemented
 	res.send({ event: { userId, event_tit }, message: 'Event succesfully created.' });
@@ -10,7 +11,7 @@ const createEvent = async (req, res) => {
 
 // delete Event from MySQL db
 const deleteEvent = async (req, res) => {
-    const { eventId } = req.body;
+	const { eventId } = req.body;
 	const deleteEventResult = await knexConnection('EVENTS').where('event_ID', eventId).del();
 	console.log(deleteEventResult);
 	if (deleteEventResult != 0) {
@@ -29,3 +30,8 @@ const getEvents = async (req, res) => {
 	res.send(fetchedEvents);
 };
 
+export {
+	createEvent,
+	deleteEvent,
+	getEvents
+};
