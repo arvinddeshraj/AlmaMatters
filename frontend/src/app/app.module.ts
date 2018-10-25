@@ -16,6 +16,9 @@ import { PostsModule } from './posts/posts.module';
 import { CommonComponentsModule } from './common/common-components.module';
 import { ProfileComponentComponent } from './profile/pages/profile-component/profile-component.component';
 import { ProfileModule } from './profile/profile.module';
+import { CallbackComponent } from './callback/callback.component';
+import { ServicesModule } from './services/services.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes = [{
   path: '',
@@ -31,12 +34,17 @@ const appRoutes = [{
 {
   path: 'profile',
   component: ProfileComponentComponent
+},
+{
+  path: 'iauth/iiits/callback/:token',
+  component: CallbackComponent
 }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,8 @@ const appRoutes = [{
     PostsModule,
     ProfileModule,
     CommonComponentsModule,
+    ServicesModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { User } from './../../../models/user.model';
+import { AppState } from './../../../app.state';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
-  constructor(private store: Store<AppState>) { }
+  user : User;
+  constructor(private store: Store<AppState>) { 
+    store.select('user').subscribe(
+      user => this.user = user
+    );
+  }
   ngOnInit() {
   }
 
