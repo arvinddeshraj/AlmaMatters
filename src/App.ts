@@ -1,5 +1,7 @@
 import { createServer as httpsServer, ServerOptions, Server as sServer } from 'https';
 import { createServer as httpServer, Server as Server } from 'http';
+import { sign as signToken, verify as verifyToken } from 'jsonwebtoken';
+import * as bodyParser from 'body-parser';
 import * as express from 'express';
 
 export default class App {
@@ -14,6 +16,16 @@ export default class App {
    */
   constructor(credentials: ServerOptions, name: string = 'Alma Matters') {
     this.app = express();
+    this.app.use(bodyParser.json({ parameterLimit: 1000000, limit: '50mb', extended: true }));
+    this.app.use(bodyParser.urlencoded({ parameterLimit: 1000000, limit: '50mb', extended: true }));
+    this.app.use(async (req, res, next) => {
+      if(req.get('authorization')) {
+        const token = req.get('authorization').split[0]; // Bearer <token>
+        const decoded = verifyToken(token, 'secretkey');
+        req.user = decoded;
+      }
+      next();
+    });
     this.https = httpsServer(credentials, this.app);
     this.http = httpServer(this.app);
     this.app.set('name', name);
