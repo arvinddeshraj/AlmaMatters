@@ -25,7 +25,7 @@ const deletePost = async (req, res) => {
 
 // retrieve Posts from DB for primary feed.
 const getPosts = async (req, res) => {
-	const {initialPostNumber, finalPostNumber} = req.body;
+	const {initialPostNumber, finalPostNumber} = req.query;
 	let lim = parseInt(finalPostNumber) - parseInt(initialPostNumber);
 	console.log('initial',initialPostNumber,'finalPostNumber',finalPostNumber)
 	const fetchedPosts = await knexConnection.select().table('POST').orderBy('date', 'desc').limit(lim).offset(parseInt(initialPostNumber));
