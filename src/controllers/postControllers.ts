@@ -1,4 +1,5 @@
 import knexConnection from '../models/connection';
+import apiConnection from '../models/apiConnection';
 
 // add Post to MySQL db
 const addPost = async (req, res) => {
@@ -6,9 +7,11 @@ const addPost = async (req, res) => {
 	// attempting to read roll number	from jwt
 	const userId = req.user['roll_no'];
 	const now = new Date();
-	const addPostResult = await knexConnection('POST').insert({ roll_no:userId, desc:description, date:now, created_at:now });
+	const user = await apiConnection('Student').where('Student_ID', userId).select('Student_First_Name', 'Student_Middle_Name', 'Student_Last_name');
+	//console.log("user is",user[0]['Student_Middle_Name'])
+	const addPostResult = await knexConnection('POST').insert({ first_name:user[0]['Student_First_Name'],middle_name:user[0]['Student_Middle_Name'],last_name:user[0]['Student_Last_name'],roll_no:userId, desc:description, date:now, created_at:now });
 	// Media will contain link to the storage where they are hosted. Yet to be implemented
-	res.send({ post: { userId, description }, message: 'Post succesfully added.' });
+	res.send({ post: { userId, description }, message: 'Post succesfully added.', user: user[0] });
 };
 
 // delete Post from MySQL db

@@ -5,8 +5,11 @@ import knexConnection from './connection';
 const main = async () => {
   await knexConnection.schema.createTable('POST', table => {
     table.increments();
-    table.string('post_ID',12);
-    table.string('roll_no',12);
+    table.string('post_ID', 12);
+    table.string('roll_no', 12);
+    table.string('first_name', 15);
+    table.string('middle_name', 15);
+    table.string('last_name', 15);
     table.text('desc');
     table.dateTime('date');
     table.string('media');
@@ -43,6 +46,7 @@ const main = async () => {
     table.dateTime('stop_date');
     table.text('event_desc');
     table.string('media',256);
+    table.boolean('archived');
   });
   
 };

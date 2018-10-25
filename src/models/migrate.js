@@ -45,45 +45,15 @@ var main = function () { return __awaiter(_this, void 0, void 0, function () {
                     table.increments();
                     table.string('post_ID', 12);
                     table.string('roll_no', 12);
+                    table.string('first_name', 15);
+                    table.string('middle_name', 15);
+                    table.string('last_name', 15);
                     table.text('desc');
                     table.dateTime('date');
                     table.string('media');
                     table.timestamps();
                 })];
             case 1:
-                _a.sent();
-                return [4 /*yield*/, connection_1["default"].schema.createTable('POST_ACTIVITY', function (table) {
-                        table.increments();
-                        table.string('post_ID', 12);
-                        table.string('roll_no', 12);
-                        table.text('comment');
-                    })];
-            case 2:
-                _a.sent();
-                return [4 /*yield*/, connection_1["default"].schema.createTable('WORK_EXP', function (table) {
-                        table.increments();
-                        table.string('roll_no', 12);
-                        table.string('company', 256);
-                        table.string('position', 100);
-                        table.dateTime('start_date');
-                        table.dateTime('stop_date');
-                    })];
-            case 3:
-                _a.sent();
-                return [4 /*yield*/, connection_1["default"].schema.createTable('INTEREST', function (table) {
-                        table.increments();
-                        table.string('roll_no', 12);
-                        table.text('interest');
-                    })];
-            case 4:
-                _a.sent();
-                return [4 /*yield*/, connection_1["default"].schema.createTable('EVENTS', function (table) {
-                        table.increments();
-                        table.string('event_ID', 12);
-                        table.string('roll_no', 12);
-                        table.text('event_desc');
-                    })];
-            case 5:
                 _a.sent();
                 return [2 /*return*/];
         }

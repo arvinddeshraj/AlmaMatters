@@ -26,9 +26,8 @@ export default class App {
       limit: '50mb',
       extended: true
     }));
-    const unprotectedRoutes = ['/api/auth/getToken'];
     this.app.use(async (req, res, next) => {
-      if (unprotectedRoutes.find(u => u == req.url) ) {
+      if ( req.url == '/api/auth/getToken' ) {
         next();
       } else {
         if (req.get('x-auth')) {
