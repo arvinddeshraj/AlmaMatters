@@ -16,6 +16,7 @@ import { PostsModule } from './posts/posts.module';
 import { CommonComponentsModule } from './common/common-components.module';
 import { ProfileComponentComponent } from './profile/pages/profile-component/profile-component.component';
 import { ProfileModule } from './profile/profile.module';
+import { ProfilePostsComponent } from './profile/pages/profile-posts/profile-posts.component';
 
 const appRoutes = [{
   path: '',
@@ -31,6 +32,10 @@ const appRoutes = [{
 {
   path: 'profile',
   component: ProfileComponentComponent
+},
+{
+  path: 'profile-posts',
+  component: ProfilePostsComponent
 }
 ];
 
