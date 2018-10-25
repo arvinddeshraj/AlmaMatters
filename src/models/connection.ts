@@ -3,10 +3,10 @@
 const knexConnection = require('knex')({
   client: 'mysql',
   connection: {
-    host: 'iamjesse',
-    user: 'jesse',
-    password: 'loveispatientandkind',
-    database: 'phone_book'
+    host: 'localhost',
+    user: 'root',
+    password: process.env.DBPASS,
+    database: 'almamatters'
   }
 });
 
