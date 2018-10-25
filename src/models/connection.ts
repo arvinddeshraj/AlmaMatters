@@ -3,9 +3,9 @@
 const knexConnection = require('knex')({
   client: 'mysql',
   connection: {
-    host: 'localhost',
+    host: 'almadoluma.cawvdhszf26b.us-east-1.rds.amazonaws.com',
     user: 'root',
-    password: process.env.DBPASS,
+    password: process.env.AWSPASS,
     database: 'almamatters'
   }
 });
