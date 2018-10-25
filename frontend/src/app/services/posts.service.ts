@@ -8,7 +8,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
-  createPost(postcontent) {
-    return this.http.post('/post/', {}, {headers: {}})
+  createPost(postcontent, token) {
+    console.log(postcontent)
+    return this.http.post('/post/add', {description: postcontent}, {headers: {'x-auth': token}});
   }
 }

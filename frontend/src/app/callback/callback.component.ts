@@ -20,6 +20,7 @@ export class CallbackComponent implements OnInit {
         res => {
           console.log(res);
           const body = JSON.parse(JSON.stringify(res));
+          localStorage.setItem('x-auth', body.token);
           this.store.dispatch(new UserActions.UpdateUser({token: body.token, firstName: body.user[0]['Student_First_Name'], lastName: body.user[0]['Student_Last_name']}))
           this.router.navigate(['/dashboard']);
         },
