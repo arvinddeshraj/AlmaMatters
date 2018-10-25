@@ -1,0 +1,24 @@
+<div style="padding:  2%">
+  <h1 style="font-family:courier;">Posts</h1>
+  
+  
+  <!-- <div *ngIf="pageEvent">
+    <h5>Page Change Event Properties</h5>
+    <div>List length: {{pageEvent.length}}</div>
+    <div>Page size: {{pageEvent.pageSize}}</div>
+    <div>Page index: {{pageEvent.pageIndex}}</div>
+  </div> -->
+
+  <div fxLayout="row wrap">
+    <div fxFlex = "25" *ngFor="let post of posts; let i = index" style="padding:1%">
+      <app-single-post ></app-single-post>
+    </div>
+  </div>
+
+
+  <mat-paginator (page) = "pagechanged($event)" [length]="length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="pageEvent = $event">
+  </mat-paginator>
+  
