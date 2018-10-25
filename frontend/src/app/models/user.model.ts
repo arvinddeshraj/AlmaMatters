@@ -1,4 +1,8 @@
+// import { Post } from "./post.model";
+
+
 export interface User {
-    name: string;
+    firstName?: string;
+    lastName?: string;
     token: string;
 }

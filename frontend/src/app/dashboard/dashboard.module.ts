@@ -7,13 +7,20 @@ import { LeftbarComponent } from './components/leftbar/leftbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import { LeftbarPostComponent } from './components/leftbar-post/leftbar-post.component';
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   imports: [
     CommonModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
 
   declarations: [DashboardComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]
