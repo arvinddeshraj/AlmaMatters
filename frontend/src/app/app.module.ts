@@ -16,6 +16,7 @@ import { PostsModule } from './posts/posts.module';
 import { CommonComponentsModule } from './common/common-components.module';
 import { ProfileComponentComponent } from './profile/pages/profile-component/profile-component.component';
 import { ProfileModule } from './profile/profile.module';
+import { ProfilePostsComponent } from './profile/pages/profile-posts/profile-posts.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +35,10 @@ const appRoutes = [{
 {
   path: 'profile',
   component: ProfileComponentComponent
+},
+{
+  path: 'profile-posts',
+  component: ProfilePostsComponent
 },
 {
   path: 'iauth/iiits/callback/:token',

@@ -4,12 +4,17 @@ import { ProfileComponentComponent } from './pages/profile-component/profile-com
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfilePostsComponent } from './pages/profile-posts/profile-posts.component';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
-    FlexLayoutModule
+    MatCardModule,
+    MatListModule,
+    FlexLayoutModule,
+    MatGridListModule
   ],
   declarations: [ProfileComponentComponent, ProfilePostsComponent]
 })
