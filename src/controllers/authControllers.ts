@@ -29,7 +29,7 @@ const getToken = async (req, res) => {
         // const student = await queryDb(`select * from student where Id=${decoded.id}`)
 
         // TODO create token and send in response
-        const token = signToken(decoded.id, 'secretkey');
+        const token = signToken({id: decoded.id, roll_no: decoded.roll_no}, 'secretkey');
         res.send({token, user});
     } catch(e) {
         res.send(e)
