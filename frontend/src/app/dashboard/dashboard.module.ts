@@ -9,6 +9,8 @@ import { LeftbarPostComponent } from './components/leftbar-post/leftbar-post.com
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatIconModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
 
   declarations: [DashboardComponent, LeftbarComponent, LeftbarPostComponent, MainDashboardComponent]

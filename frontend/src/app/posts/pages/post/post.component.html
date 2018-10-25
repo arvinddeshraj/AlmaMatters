@@ -11,7 +11,7 @@
 
   <div fxLayout="row wrap">
     <div fxFlex = "25" *ngFor="let post of posts; let i = index" style="padding:1%">
-      <app-single-post ></app-single-post>
+      <app-single-post [singlePost] = "post"></app-single-post>
     </div>
   </div>
 

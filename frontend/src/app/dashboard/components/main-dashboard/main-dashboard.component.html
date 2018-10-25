@@ -12,11 +12,13 @@
       <div fxFlex="1" fxLayoutAlign="center center">
         <div class="vertical-divider"></div>
       </div>
-      <div style="padding: 0 16px">
+      <div fxFlex = "89" style="padding: 0 16px">
         <form [formGroup]="newPostForm" (ngSubmit)="onNewPost()">
-          <mat-form-field class="new-post-content" >
-            <input type="textarea" matInput placeholder="Type a new post" formControlName="postContent">
+          <mat-form-field fxFlex = "75" class="new-post-content" >
+            <textarea  matInput placeholder="Type a new post" formControlName="postContent"></textarea>
           </mat-form-field>
+          <div fxFlex= "10"></div>
+          <div fxLayoutAlign = "center center"><button mat-flat-button color="primary">Post</button></div>
         </form>
       </div>
     </div>

@@ -1,17 +1,6 @@
 {
     "/api/*": {
-        "target": "http://localhost:3000/",
-        "secure": false,
-        "logLevel": "debug"
-    },
-    "/auth/*": {
         "target": "http://10.0.33.105:3000/",
-
-        "secure": false,
-        "logLevel": "debug"
-    },"/post/*": {
-        "target": "http://10.0.33.105:3000/",
-
         "secure": false,
         "logLevel": "debug"
     }

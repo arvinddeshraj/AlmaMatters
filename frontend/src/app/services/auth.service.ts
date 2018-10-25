@@ -9,6 +9,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   getToken(token) {
-    return this.http.post('/auth/getToken', {token});
+    return this.http.post('/api/auth/getToken', {token});
   }
 }
