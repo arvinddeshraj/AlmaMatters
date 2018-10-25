@@ -8,7 +8,8 @@
     "tester": "jest --detectOpenHandles --watch",
     "migrate": "tsc --lib ES2015 src/models/migrate.ts && node src/models/migrate.js",
     "dev": "concurrently --kill-others \"tsc -w -p src\" \"nodemon dist/index.js\"",
-    "serve": "concurrently --kill-others \"tsc -p src\" \"node dist/index.js\""
+    "serve": "concurrently --kill-others \"tsc -p src\" \"node dist/index.js\"",
+    "prod": "node dist"
   },
   "repository": {
     "type": "git",

@@ -3,6 +3,7 @@ import { createServer as httpServer, Server as Server } from 'http';
 import { sign as signToken, verify as verifyToken } from 'jsonwebtoken';
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 
 export default class App {
   private port: number = Number(process.env.PORT) || 3000;

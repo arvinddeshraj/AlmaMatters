@@ -1,64 +1,36 @@
 import knexConnection from '../models/connection';
 
+// add Post to MySQL db
 const addPost = async (req, res) => {
-  const { userId, postTitle, postBody } = req.body;
-  // push to database
-	knexConnection('<posts_table>').insert({ userId,
-																								postTitle,
-																								desc: postBody,
-		                                            date: new Date().toLocaleString('en-US')
-																							});
-  res.json({ post: { userId, postBody } });
+	const { userId, description  } = req.body;
+	const now = new Date();
+  const addPostResult = await knexConnection('POST').insert({ roll_no:userId, desc:description, date:now, created_at: now });
+	// Media will contain link to the storage where they are hosted. Yet to be implemented
+	res.send({ post: { userId, description }, message: 'Post succesfully added.' });
 };
 
-const likePost = async (req, res) => {
-	const { userId, postId } = req.body;
-	// check whether the user already liked the post
-	// if
-	const user = knexConnection('<likes_table>').select('userId')
-	if (user) {
-		res.json({ message: 'You already liked it!!!' });
-	}
-	else {
-		knexConnection('<posts_table_name>').insert({ postId, userId })
-		const likes = await knexConnection('<likes_table>'); // update and fetch
-		res.json({ likes });
-	}
-};
-
+// delete Post from MySQL db
 const deletePost = async (req, res) => {
-  const { postId } = res.body;
-  // check whether the actor is authenticated delete from database
-  res.json({ message: 'Successfuly deleted...' });
+  const { postId } = req.body;
+	const deletePostResult = await knexConnection('POST').where('id', postId).del();
+	console.log(deletePostResult);
+	if (deletePostResult != 0) {
+		res.send({ message: 'Successfuly deleted Post.' });
+	} else {
+		res.send({error: 'Unable to delete the Post.'})
+	}
 };
 
+// retrieve Posts from DB for primary feed.
 const getPosts = async (req, res) => {
-  const { userName } = req.body;
-  // fetch from database
-  const posts = await knexConnection.select('<posts_column_name>').from('<students_table_name>')
-  // res.json({ posts }); // we get posts from DataBase response
-};
-
-const getRecentPosts = async (req, res) => {
-	// loggedIn Student Id then fetch his/her posts
-	const recentPosts = [
-												{title: 'l', body: 'lorem'},
-												{title: 'i', body: 'ipsum'}
-	                    ]
-	res.json({ recentPosts });
-};
-
-const getUnpublishedPosts = async (req, res) => {
-	// loggedIn Student Id then fetch his/her posts
-	const unpublishedPosts = [
-															{title: 'lo', body: 'unpublished lorem'}
-				  								 ]
-	res.json({ unpublishedPosts });
+	const {initialPostNumber, finalPostNumber} = req.body;
+	let lim = parseInt(finalPostNumber) - parseInt(initialPostNumber);
+	console.log('initial',initialPostNumber,'finalPostNumber',finalPostNumber)
+	const fetchedPosts = await knexConnection.select().table('POST').orderBy('date', 'desc').limit(lim).offset(parseInt(initialPostNumber));
+	res.send(fetchedPosts);
 };
 
 export { addPost,
-				deletePost,
-				getPosts,
-				getRecentPosts,
-				getUnpublishedPosts
-			 };
+		 deletePost,
+		 getPosts,
+};
