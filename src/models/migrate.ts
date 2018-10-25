@@ -36,10 +36,13 @@ const main = async () => {
   });
 
   await knexConnection.schema.createTable('EVENTS', table => {
-    table.increments();
-    table.string('event_ID',12);
+    table.increments('event_ID');
     table.string('roll_no',12);
+    table.string('event_title',100);
+    table.dateTime('start_date');
+    table.dateTime('stop_date');
     table.text('event_desc');
+    table.string('media',256);
   });
   
 };
