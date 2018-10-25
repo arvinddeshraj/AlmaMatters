@@ -4,7 +4,7 @@ import knexConnection from '../models/connection';
 const createEvent = async (req, res) => {
 	const userId = req.user['roll_no'];
 	const { event_tit, st_date, end_date, description  } = req.body;
-  	const addPostResult = await knexConnection('EVENTS').insert({ roll_no: userId,event_title: event_tit, start_date: st_date, stop_date: end_date, desc: description });
+  	const addPostResult = await knexConnection('EVENTS').insert({ roll_no: userId,event_title: event_tit, start_date: st_date, end_date: end_date, event_desc: description });
 	// Media will contain link to the storage where they are hosted. Yet to be implemented
 	res.send({ event: { userId, event_tit }, message: 'Event succesfully created.' });
 };

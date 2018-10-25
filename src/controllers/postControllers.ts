@@ -36,8 +36,8 @@ const getPosts = async (req, res) => {
 };
 
 const getUserPosts = async (req, res) => {
-	const {roll_number} = req.body;
-	const userPosts = await knexConnection.select().table('POST').where('roll_no', roll_number).orderBy('date','desc');
+	const roll_number = req.user['roll_no'];
+	const userPosts = await knexConnection.select().table('POST').where({roll_no: roll_number}).orderBy('date','desc');
 	res.send(userPosts)
 }
 

@@ -11,6 +11,6 @@ const router = new Router();
 router.post('/add', addPost) // <user> add post page
 router.post('/delete', deletePost) // <user> settings page
 router.get('/get', getPosts)
-router.post('/userposts', getUserPosts)
+router.get('/userposts', getUserPosts)
 
 export default router;

@@ -6,6 +6,6 @@ import {
 
 const router = new Router();
 
-router.post('/', getProfile);
+router.get('/', getProfile);
 
 export default router;
