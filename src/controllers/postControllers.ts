@@ -30,9 +30,6 @@ const getPosts = async (req, res) => {
 	res.send(fetchedPosts);
 };
 
-
-
-
 export { addPost,
 		 deletePost,
 		 getPosts,

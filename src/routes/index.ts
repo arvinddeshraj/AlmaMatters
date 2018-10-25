@@ -5,8 +5,8 @@ import postRoutes from './postRoutes';
 
 export default new Map<string, Function>([
     ['/', defaultRoutes],
-    ['/user', authRoutes],
-    ['/post', postRoutes],
+    ['/auth', authRoutes],
     ['/api', apiRoutes],
-    //['/event', eventRoutes]
+    ['/post', postRoutes],
+    // ['/event', eventRoutes]
 ]);
