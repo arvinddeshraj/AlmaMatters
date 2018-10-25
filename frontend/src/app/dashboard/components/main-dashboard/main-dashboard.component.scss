@@ -1,5 +1,56 @@
 @import '../../../../theme';
 
 .muted-text {
-    color: mat-color($mat-app-primary, 300);
+  color: mat-color($mat-app-primary, 300);
+}
+
+.meter {
+  height: 20px;
+  /* Can be anything */
+  width: 300px;
+  position: relative;
+  background: rgb(255, 255, 255);
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  box-shadow:
+    0 2px 9px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.meter>.circle {
+  display: block;
+  height: 100%;
+  width: 50%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43, 194, 83);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.new-post {
+  background-color: #fff;
+  margin: 48px 0 0 0;
+  height: 440px;
+  width: 660px;
+}
+.inverted {
+  transform: rotate(180deg) scaleX(-1);
+}
+.vertical-divider {
+  width: 1px;
+  height: 40px;
+  background: mat-color($mat-app-primary, 300);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  height: 0px !important;
 }
