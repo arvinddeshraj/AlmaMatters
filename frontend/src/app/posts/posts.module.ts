@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { MatIconModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SinglePostComponent } from './single-post/single-post.component';
     MatCardModule,
     MatButtonModule,
     MatPaginatorModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ],
   declarations: [PostComponent, SinglePostComponent]
 })

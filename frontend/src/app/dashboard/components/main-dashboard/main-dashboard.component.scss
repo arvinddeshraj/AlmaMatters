@@ -39,7 +39,7 @@
 .new-post {
   background-color: #fff;
   margin: 48px 0 0 0;
-  height: 440px;
+  height: 550px;
   width: 660px;
 }
 .inverted {
@@ -51,6 +51,11 @@
   background: mat-color($mat-app-primary, 300);
 }
 
+.vertical-divider2 {
+  width: 1px;
+  height: 300px;
+  background: mat-color($mat-app-primary, 300);
+}
 .mat-form-field-appearance-legacy .mat-form-field-underline{
   height: 0px !important;
 }

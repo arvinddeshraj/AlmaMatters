@@ -24,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './directory/pages/search/search.component';
 import { FormsModule } from '@angular/forms';  
 import { ReactiveFormsModule } from '@angular/forms';
+import { eventReducer } from './reducers/event.reducer';
+
 
 const appRoutes = [{
   path: '',
@@ -63,6 +65,7 @@ const appRoutes = [{
     BrowserModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
+      event: eventReducer,
       user: userReducer
     }),
     LandingPageModule,
