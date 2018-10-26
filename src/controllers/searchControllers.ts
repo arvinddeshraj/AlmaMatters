@@ -4,7 +4,7 @@ import knexConnection from '../models/connection';
 const searchbyName = async (req, res) => {
 	const { name  } = req.body;
 	let name_details = name.split(" ")
-  	const addPostResult = await knexConnection.select().table('STUDENTS').where({'Student_First_Name': name_details[0],'Student_Last_name': name_details[2]});
+  const addPostResult = await knexConnection.select().table('STUDENTS').where({'Student_First_Name': name_details[0],'Student_Last_name': name_details[2]});
 	// Media will contain link to the storage where they are hosted. Yet to be implemented
 	res.send({ event: { name }, message: 'Student found.' });
 };
@@ -21,4 +21,10 @@ const searchbyInterest = async (req, res) => {
   	const addPostResult = await knexConnection.select().table('INTERESTS').where('interest', int_name);
 	// Media will contain link to the storage where they are hosted. Yet to be implemented
 	res.send({ event: { int_name }, message: 'Interest found.' });
+};
+
+export {
+	searchbyName,
+	searchbyCompany,
+	searchbyInterest
 };

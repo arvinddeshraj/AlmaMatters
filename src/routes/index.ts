@@ -4,6 +4,7 @@ import apiRoutes from './apiRoutes';
 import postRoutes from './postRoutes';
 import eventRoutes from './eventRoutes';
 import profileRoutes from './profileRoutes';
+import searchRoutes from './searchRoutes';
 
 export default new Map<string, Function>([
     ['/api/', defaultRoutes],
@@ -11,5 +12,6 @@ export default new Map<string, Function>([
     ['/api/api', apiRoutes],
     ['/api/post', postRoutes],
     ['/api/event', eventRoutes],
-    ['/api/profile', profileRoutes]
+    ['/api/profile', profileRoutes],
+    ['/api/search', searchRoutes]
 ]);
