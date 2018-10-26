@@ -20,4 +20,7 @@ export class PostsService {
       err => console.log(err)
     );;
   }
+  delPost(ID, token) {
+    return this.http.post('/api/post/delete',{postId: ID }, {headers: {'x-auth': token}});
+  }
 }

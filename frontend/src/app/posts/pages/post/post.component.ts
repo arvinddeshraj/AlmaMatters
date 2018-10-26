@@ -28,10 +28,10 @@ export class PostComponent implements OnInit {
   }
 
   getPosts (st, ed) {
-    // this.postSerivce.getPosts(st,ed,localStorage.getItem('x-auth')).subscribe(
-    //   res => this.posts = JSON.parse(JSON.stringify(res)).fetchedPosts,
-    //   err => console.log(err)
-    // );
+    this.postSerivce.getPosts(st,ed,localStorage.getItem('x-auth')).subscribe(
+      res => this.posts = JSON.parse(JSON.stringify(res)).fetchedPosts,
+      err => console.log(err)
+    );
   }
 
   pagechanged(event) {

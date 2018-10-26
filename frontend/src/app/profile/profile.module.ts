@@ -14,7 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatListModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   declarations: [ProfileComponentComponent, ProfilePostsComponent]
 })

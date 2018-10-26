@@ -30,6 +30,9 @@
           {{p.desc}}
         </p>
       </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="delete(p.id)">Delete</button>
+      </mat-card-actions>
     </mat-card>
     </div>
 </mat-grid-tile>
