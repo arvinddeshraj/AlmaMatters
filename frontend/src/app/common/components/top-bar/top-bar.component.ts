@@ -3,7 +3,8 @@ import { Store } from '@ngrx/store';
 import { User } from './../../../models/user.model';
 import { AppState } from './../../../app.state';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-top-bar',
@@ -12,12 +13,13 @@ import { Router } from '@angular/router';
 })
 export class TopBarComponent implements OnInit {
   user : User;
-  constructor(private store: Store<AppState>, private authService: AuthService, private router: Router) { 
+  constructor(private store: Store<AppState>, private authService: AuthService, private router: Router, private route:ActivatedRoute) { 
     store.select('user').subscribe(
       user => this.user = user
     );
   }
   ngOnInit() {
+    console.log(this.router.url);
     if (localStorage['x-auth']){
       console.log(localStorage['x-auth']);
       this.authService.getDetails(localStorage['x-auth']);
