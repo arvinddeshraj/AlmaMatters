@@ -1,6 +1,7 @@
 import {createServer as httpsServer,ServerOptions,Server as sServer} from 'https';
 import {createServer as httpServer,Server as Server} from 'http';
 import {sign as signToken,verify as verifyToken} from 'jsonwebtoken';
+import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
 
@@ -16,6 +17,7 @@ export default class App {
    */
   constructor(credentials: ServerOptions, name: string = 'Alma Matters') {
     this.app = express();
+    this.app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
     this.app.use(bodyParser.json({
       parameterLimit: 1000000,
       limit: '50mb',

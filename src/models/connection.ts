@@ -10,7 +10,8 @@ const knexConnection = require('knex')({
     host: 'almadoluma.cawvdhszf26b.us-east-1.rds.amazonaws.com',
     user: 'root',
     password: process.env.AWSPASS,
-    database: 'almamatters'
+    database: 'almamatters',
+    debug: true
   }
 });
 

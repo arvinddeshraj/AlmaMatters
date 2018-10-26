@@ -3,16 +3,21 @@ import apiConnection from '../models/apiConnection';
 
 const searchByBatch = async (req, res) => {
 	const { yr } = req.body;
-	const students = await apiConnection('Student').select().where('Student_Registered_Year' , 'REGEXP', `^${yr}`);
+	const regex = `^${yr}`;
+	// const students = await apiConnection('Student').where(apiConnection.knex.raw(`?? REGEXP ?`, ['Student_Registered_Year', regex]))
+	// console.log(students	)
+	const students = await apiConnection('Student').select()
+													.where('Student_Registered_Year' , `REGEXP ^${yr}`);
+	console.log(yr, students);
 	res.send({ students });
 };
 
 const getAllByName = async (req, res) => {
 	const { name } = req.body;
 	const students = await apiConnection('Student').select().where(function() {
-										this.where('Student_First_Name', 'REGEXP', name)
-											  .orWhere('Student_Middle_Name', 'REGEXP', name)
-												.orWhere('Student_Last_name', 'REGEXP', name)
+										this.where('Student_First_Name', `REGEXP '${name}'`)
+											  .orWhere('Student_Middle_Name', `REGEXP '${name}'`)
+												.orWhere('Student_Last_name', `REGEXP '${name}'`)
 									});
 	res.send({ students });
 };

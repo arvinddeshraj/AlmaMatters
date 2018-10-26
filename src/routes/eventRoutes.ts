@@ -5,7 +5,7 @@ import {
   deleteEvent,
   getEvents,
   getAuthenticatedUserEvents
-} from '../controllers/eventControllers'
+} from '../controllers/eventControllers';
 
 const router = new Router();
 
