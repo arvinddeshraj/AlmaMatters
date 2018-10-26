@@ -30,8 +30,19 @@ const getEvents = async (req, res) => {
 	res.send(fetchedEvents);
 };
 
+const getAuthenticatedUserEvents = async (req, res) => {
+	const userId = req.user['roll_no'];
+	try {
+	const events = await knexConnection('EVENTS').select().where('roll_no', userId);
+	res.send({ events });
+	} catch (error) {
+		res.send({ error })
+	}
+};
+
 export {
 	createEvent,
 	deleteEvent,
-	getEvents
+	getEvents,
+	getAuthenticatedUserEvents
 };
