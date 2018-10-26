@@ -8,6 +8,14 @@ const likeUnlike = async (req, res) => {
   res.send({ message: 'you liked it...' });
 };
 
+const commentPost = async (req, res) => {
+  const userId = req.user['roll_no'];
+  const { postId, comment } = req.body;
+  // update the table
+  res.send({ message: 'comment added...' });
+};
+
 export {
-  likeUnlike
-}
+  likeUnlike,
+  commentPost
+};
