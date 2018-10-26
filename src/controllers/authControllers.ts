@@ -2,7 +2,7 @@ import {sign as signToken, verify as verifyToken } from 'jsonwebtoken';
 import apiConnection from '../models/apiConnection';
 
 const authIndex = async (req, res) => {
-    res.json({ message: 'who the f are you?' })
+    res.json({ message: 'who are you?' })
 };
 
 const jesseIndex = (req, res) => {
@@ -39,4 +39,9 @@ const getToken = async (req, res) => {
     }
 }
 
-export { authIndex, jesseIndex, getToken };
+const logout = async (req, res) => {
+    delete req.user;
+    !req.user && res.send({ message: 'Succesfully Logged Out' });
+};
+
+export { authIndex, jesseIndex, getToken, logout };
