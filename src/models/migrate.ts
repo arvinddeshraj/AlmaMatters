@@ -43,10 +43,13 @@ const main = async () => {
     table.string('roll_no',12);
     table.string('event_title',100);
     table.dateTime('start_date');
-    table.dateTime('stop_date');
+    table.dateTime('end_date');
     table.text('event_desc');
     table.string('media',256);
     table.boolean('archived');
+    table.string('first_name',15);
+    table.string('middle_name',15);
+    table.string('last_name',15);
   });
   
 };
