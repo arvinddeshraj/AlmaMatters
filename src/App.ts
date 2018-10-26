@@ -37,7 +37,7 @@ export default class App {
 
           console.log(decoded)
           req.user = decoded;
-        next();
+          next();
           }
           catch(e) {
             res.send({

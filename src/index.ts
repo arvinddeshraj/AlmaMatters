@@ -3,7 +3,7 @@ import * as path from 'path';
 import App from './App';
 import routes from './routes';
 
-import knexConnection from './models/connection';
+// import knexConnection from './models/connection';
 
 // knexConnection('numbers').where({ id: 1 }).select('*').then(_ => console.log(_))
 

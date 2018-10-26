@@ -30,15 +30,15 @@ const deletePost = async (req, res) => {
 const getPosts = async (req, res) => {
 	const {initialPostNumber, finalPostNumber} = req.query;
 	let lim = parseInt(finalPostNumber) - parseInt(initialPostNumber);
-	console.log('initial',initialPostNumber,'finalPostNumber',finalPostNumber)
+	console.log('initial', initialPostNumber,'finalPostNumber', finalPostNumber)
 	const fetchedPosts = await knexConnection.select().table('POST').orderBy('date', 'desc').limit(lim).offset(parseInt(initialPostNumber));
-	res.send(fetchedPosts);
+	res.send({fetchedPosts});
 };
 
 const getUserPosts = async (req, res) => {
 	const roll_number = req.user['roll_no'];
 	const userPosts = await knexConnection.select().table('POST').where({roll_no: roll_number}).orderBy('date','desc');
-	res.send(userPosts)
+	res.send({userPosts})
 }
 
 export { addPost,

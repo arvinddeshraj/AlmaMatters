@@ -1,15 +1,17 @@
 import { Router } from 'express';
 
 import {
-  searchbyName,
-  searchbyCompany,
-  searchbyInterest
+  searchByBatch,
+  searchByName,
+  searchByCompany,
+  searchByInterest
 } from '../controllers/searchControllers';
 
 const router = new Router();
 
-router.post('/name', searchbyName);
-router.post('/company', searchbyCompany);
-router.post('/interest', searchbyInterest);
+router.post('/batch', searchByBatch);
+router.post('/name', searchByName);
+router.post('/company', searchByCompany);
+router.post('/interest', searchByInterest);
 
 export default router;
