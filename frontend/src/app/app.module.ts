@@ -20,6 +20,7 @@ import { ProfilePostsComponent } from './profile/pages/profile-posts/profile-pos
 import { CallbackComponent } from './callback/callback.component';
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
+import { eventReducer } from './reducers/event.reducer';
 
 
 const appRoutes = [{
@@ -56,6 +57,7 @@ const appRoutes = [{
     BrowserModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
+      event: eventReducer,
       user: userReducer
     }),
     LandingPageModule,
