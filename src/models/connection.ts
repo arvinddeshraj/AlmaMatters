@@ -11,7 +11,7 @@ const knexConnection = require('knex')({
     user: 'root',
     password: process.env.AWSPASS,
     database: 'almamatters',
-    debug: true
+    // debug: true
   }
 });
 

@@ -6,7 +6,7 @@ const likeUnlike = async (req, res) => {
   // search by postId and like or unlike based on user presence
   const user = await knexConnection('LIKES').select().where('roll_no', userId);
   if (user.length > 0) {
-    try{
+    try {
       const dUser = await knexConnection('LIKES').where('roll_no', userId).del();
       const count = await knexConnection('LIKES').select().where('post_id', postId).length;
       res.send({ user: dUser, count });
@@ -32,7 +32,16 @@ const commentPost = async (req, res) => {
   const userId = req.user['roll_no'];
   const { postId, comment } = req.body;
   // update the table
-  res.send({ message: 'comment added...' });
+  try {
+    const nComment = await knexConnection('POST_ACTIVITY').insert({
+      'post_ID': postId,
+      'roll_no': userId,
+      'comment': comment
+    });
+    res.send({ message: 'comment added...', comment: nComment });
+  } catch (e) {
+    res.send(e);
+  }
 };
 
 export {
