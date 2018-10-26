@@ -33,7 +33,7 @@ const getPosts = async (req, res) => {
 	console.log('initial', initialPostNumber,'finalPostNumber', finalPostNumber)
 	try {
 		const fetchedPosts = await knexConnection.select().table('POST').orderBy('date', 'desc').limit(lim).offset(parseInt(initialPostNumber));
-		const total = await knexConnection('POST').select().count('*')[0]['count(*)']
+		const total = await knexConnection('POST').select().count('*')
 		console.log(total);
 		res.send({fetchedPosts, total});
 	} catch(e) {
