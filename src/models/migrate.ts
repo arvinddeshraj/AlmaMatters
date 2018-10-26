@@ -21,6 +21,7 @@ const main = async () => {
     table.string('post_ID',12);
     table.string('roll_no',12);
     table.text('comment');
+    table.foreign('post_ID').references('POST.post_ID');
   });
 
   await knexConnection.schema.createTable('WORK_EXP', table => {
@@ -52,6 +53,12 @@ const main = async () => {
     table.string('last_name',15);
   });
   
+  await knexConnection.schema.createTable('LIKES', table => {
+    table.increments('id');
+    table.string('post_id', 12);
+    table.string('roll_no', 12);
+    table.foreign('post_id').references('POST.post_ID');
+  })
 };
 
 
