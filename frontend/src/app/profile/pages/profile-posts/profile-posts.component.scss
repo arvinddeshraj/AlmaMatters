@@ -1,0 +1,17 @@
+.pirate {
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0px;
+   width: 100%;
+   z-index: 10;
+}
+.example-card {
+    min-width: 400px;
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/10/20/Pictures/_de482c5a-96b0-11e6-89e7-7a6d6b3d3438.jpg');
+    background-size: cover;
+  }
+  

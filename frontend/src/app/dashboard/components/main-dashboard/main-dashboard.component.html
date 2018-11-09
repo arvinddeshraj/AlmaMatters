@@ -1,0 +1,26 @@
+<div fxLayout="column">
+  <span>Posts Reach</span>
+  <span class="muted-text">Your activity this week</span>
+  <!-- <div class="meter">
+    <div class="circle"></div>
+  </div> -->
+  <div class="card new-post">
+    <div fxLayout="row" style="padding: 16px 0;">
+      <div fxFlex="10" fxLayoutAlign="center center">
+        <mat-icon class="inverted">wb_incandescent</mat-icon>
+      </div>
+      <div fxFlex="1" fxLayoutAlign="center center">
+        <div class="vertical-divider"></div>
+      </div>
+      <div fxFlex = "89" style="padding: 0 16px">
+        <form [formGroup]="newPostForm" (ngSubmit)="onNewPost()">
+          <mat-form-field fxFlex = "75" class="new-post-content" >
+            <textarea  matInput placeholder="Type a new post" formControlName="postContent"></textarea>
+          </mat-form-field>
+          <div fxFlex= "10"></div>
+          <div fxLayoutAlign = "center center"><button mat-flat-button color="primary">Post</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
