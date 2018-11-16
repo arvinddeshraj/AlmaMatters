@@ -28,3 +28,7 @@ export default router;
 | /post/add/ | POST      | Yes       | addPost   | { userId, postBody } | { post: { userId(ID), postBody(String - Mark(up/down) } } |
 | /post/delete/ | POST | Yes | deletePost | { postId } | { message(String) } |
 | /post/get | POST | No | getPosts | { userName } | { posts(Array) } |
+| /post/recent | POST | Yes |  |  |
+| /post/unpublished | POST | Yes |  |  |
+
+## eventRoutes
