@@ -2,11 +2,16 @@
 
 const knexConnection = require('knex')({
   client: 'mysql',
+  pool: {
+    min: 2,
+    max: 10
+  },
   connection: {
-    host: 'iamjesse',
-    user: 'jesse',
-    password: 'loveispatientandkind',
-    database: 'phone_book'
+    host: 'almadoluma.cawvdhszf26b.us-east-1.rds.amazonaws.com',
+    user: 'root',
+    password: process.env.AWSPASS,
+    database: 'almamatters',
+    // debug: true
   }
 });
 
