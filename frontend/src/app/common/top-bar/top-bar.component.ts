@@ -1,4 +1,4 @@
-timport { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { User } from './../../../models/user.model';
 import { AppState } from './../../../app.state';
