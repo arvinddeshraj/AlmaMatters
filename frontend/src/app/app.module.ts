@@ -21,6 +21,8 @@ import { SearchComponent } from './directory/pages/search/search.component';
 import { FormsModule } from '@angular/forms';  
 import { ReactiveFormsModule } from '@angular/forms';
 import { eventReducer } from './reducers/event.reducer';
+import { userReducer } from './reducers/user.reducer';
+import { StoreModule } from '@ngrx/store';
 
 
 const appRoutes = [{
