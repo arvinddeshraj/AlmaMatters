@@ -15,7 +15,8 @@ import {MatSnackBar} from '@angular/material';
 export class MainDashboardComponent implements OnInit {
   newPostForm: FormGroup;
   newEventForm: FormGroup;
-  constructor(private store: Store<AppState>, private postService: PostsService, private eventService: EventService, public snackBar: MatSnackBar) { 
+  // tslint:disable-next-line:max-line-length
+  constructor(private store: Store<AppState>, private postService: PostsService, private eventService: EventService, public snackBar: MatSnackBar) {
     this.minDate = Date.now().toLocaleString();
   }
   minDate = Date.now().toLocaleString();
@@ -40,7 +41,7 @@ export class MainDashboardComponent implements OnInit {
         this.newPostForm.reset();
         this.openPostCreatedSnackBar();
       },
-      err => console.log(err))
+      err => console.log(err));
   }
   openPostCreatedSnackBar() {
     this.snackBar.openFromComponent(PostCreatedSnackComponent, {
@@ -54,14 +55,14 @@ export class MainDashboardComponent implements OnInit {
   }
   onNewEvent () {
     const startDate = (new Date(this.newEventForm.value.eventStartDate)).toISOString();
-    let endDate = (new Date(this.newEventForm.value.eventEndDate)).toISOString();
+    const endDate = (new Date(this.newEventForm.value.eventEndDate)).toISOString();
     // if (startDate === endDate) +endDate + 86400;
     const header = this.newEventForm.value.eventHeader;
     const eventContent = this.newEventForm.value.eventContent;
-    console.log(header, eventContent,startDate, endDate);
-    this.eventService.createEvent(header, eventContent,startDate, endDate,localStorage.getItem('x-auth')).subscribe(
+    console.log(header, eventContent, startDate, endDate);
+    this.eventService.createEvent(header, eventContent, startDate, endDate, localStorage.getItem('x-auth')).subscribe(
       res => {
-        console.log(res)
+        console.log(res);
         this.newEventForm.reset();
         this.openEventCreatedSnackBar();
       },
@@ -74,12 +75,14 @@ export class MainDashboardComponent implements OnInit {
 }
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'post-created-csnack',
   template: '<div style="margin: 0 auto"><p>Post Created</p></div>',
   styles: [],
 })
 export class PostCreatedSnackComponent {}
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'event-created-csnack',
   template: '<div style="margin: 0 auto"><p>Event Created</p></div>',
   styles: [],

@@ -12,15 +12,15 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
-  user : User;
-  constructor(private store: Store<AppState>, private authService: AuthService, private router: Router, private route:ActivatedRoute) { 
+  user: User;
+  constructor(private store: Store<AppState>, private authService: AuthService, private router: Router, private route: ActivatedRoute) {
     store.select('user').subscribe(
       user => this.user = user
     );
   }
   ngOnInit() {
     console.log(this.router.url);
-    if (localStorage['x-auth']){
+    if (localStorage['x-auth']) {
       console.log(localStorage['x-auth']);
       this.authService.getDetails(localStorage['x-auth']);
     } else {
