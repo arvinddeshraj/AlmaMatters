@@ -1,0 +1,58 @@
+<div fxLayout="row">
+  <div fxFlex="20" fxLayoutGap="32px" fxLayout="column" style="padding:2%">
+    <mat-card class="c2">
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Search" [(ngModel)]="value">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <mat-card-header>
+        Search By:
+      </mat-card-header>
+      <mat-card-content>
+        <mat-radio-group class="example-radio-group" [(ngModel)]="finalCriteria">
+          <mat-radio-button class="example-radio-button" [value]="'batch'">
+            Batch
+          </mat-radio-button>
+          <mat-form-field *ngIf="finalCriteria == 'batch'" >
+            <mat-select placeholder="Select batch" [(value)] = "selectedBatch">
+              <mat-option *ngFor="let batch of batches" [value] = "batch.viewValue">
+                {{batch.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button *ngIf="selectedBatch !== ''" (click)= "getBatch()">Apply</button>
+          <mat-radio-button class="example-radio-button" [value]="'branch'">
+            Branch
+          </mat-radio-button>
+          <mat-form-field *ngIf="finalCriteria == 'branch'">
+            <mat-select placeholder="Select batch" [(value)] = "selectedBranch" >
+              <mat-option *ngFor="let branch of branches" [value]="branch.viewValue">
+                {{branch.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button *ngIf="selectedBranch !== ''" (click)= "getBranch()">Apply</button>
+        </mat-radio-group>
+        <div class="example-selected-value">Your favorite season is: {{finalCriteria}} {{finalCriteria == "batch"}}</div>
+        <!-- <button mat-flat-button color="primary" (click) = "getAll('Some')">Find Users</button> -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="80" style="padding:2%">
+    <mat-card class="c1" *ngFor="let s of showingStudents; let i = index ">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image" ></div>
+        <mat-card-title>{{s.Student_First_Name}} {{s.Student_Last_name}}</mat-card-title>
+        <mat-card-subtitle>{{s.Student_Email}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p *ngIf = "s.Student_Registered_Degree == '1'">B.Tech</p>
+        <p *ngIf = "s.Student_Registered_Degree == '2'">B.Tech + Hons</p>
+      </mat-card-content>
+    </mat-card>
+    <br>
+  </div>
+</div>

@@ -12,10 +12,16 @@ import { PostsModule } from './posts/posts.module';
 import { CommonComponentsModule } from './common/common-components.module';
 import { ProfileComponentComponent } from './profile/pages/profile-component/profile-component.component';
 import { ProfileModule } from './profile/profile.module';
+import { DirectoryModule } from './directory/directory.module';
 import { ProfilePostsComponent } from './profile/pages/profile-posts/profile-posts.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './directory/pages/search/search.component';
+import { FormsModule } from '@angular/forms';  
+import { ReactiveFormsModule } from '@angular/forms';
+import { eventReducer } from './reducers/event.reducer';
+
 
 const appRoutes = [{
   path: '',
@@ -27,6 +33,10 @@ const appRoutes = [{
 {
   path: 'posts',
   component: PostComponent
+},
+{
+  path: 'directory',
+  component: SearchComponent
 },
 {
   path: 'profile',
@@ -50,13 +60,20 @@ const appRoutes = [{
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({
+      event: eventReducer,
+      user: userReducer
+    }),
     LandingPageModule,
     DashboardModule,
     PostsModule,
     ProfileModule,
+    DirectoryModule,
     CommonComponentsModule,
     ServicesModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

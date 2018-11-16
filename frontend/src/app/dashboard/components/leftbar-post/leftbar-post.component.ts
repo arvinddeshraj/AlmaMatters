@@ -19,8 +19,8 @@ export class LeftbarPostComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.progress = this.post.progress;
-      this.heading = this.post.heading;
-      this.content = this.post.content;
+      this.heading = this.post.event_title;
+      this.content = this.post.event_desc;
     }, 200)
   }
 

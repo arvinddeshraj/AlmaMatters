@@ -1,0 +1,26 @@
+.c1 {
+    height: auto;
+}
+.c2 {
+    position: fixed;
+    min-width: 250px;
+}
+.example-form-field {
+    width: 200px;
+  }
+  .example-header-image {
+    background-image: url('https://www.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/10/20/Pictures/_de482c5a-96b0-11e6-89e7-7a6d6b3d3438.jpg');
+    background-size: cover;
+  }
+  .example-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  
+  .example-selected-value {
+    margin: 15px 0;
+  }
