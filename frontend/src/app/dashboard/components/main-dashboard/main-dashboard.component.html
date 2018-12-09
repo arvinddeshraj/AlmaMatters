@@ -1,0 +1,65 @@
+<div fxLayout="column">
+  <span>Posts Reach</span>
+  <span class="muted-text">Your activity this week</span>
+  <!-- <div class="meter">
+    <div class="circle"></div>
+  </div> -->
+  <div class="card new-post">
+    <div fxLayout="row" style="padding: 16px 0;">
+      <div fxFlex="10" fxLayoutAlign="center center">
+        <mat-icon class="inverted">wb_incandescent</mat-icon>
+      </div>
+      <div fxFlex="1" fxLayoutAlign="center center">
+        <div class="vertical-divider"></div>
+      </div>
+      <div fxFlex="89" style="padding: 0 16px">
+        <form [formGroup]="newPostForm" (ngSubmit)="onNewPost()">
+          <mat-form-field fxFlex="75" class="new-post-content">
+            <textarea matInput placeholder="Type a new post" formControlName="postContent"></textarea>
+          </mat-form-field>
+          <div fxFlex="10"></div>
+          <div fxLayoutAlign="center center"><button mat-flat-button color="primary">Post</button></div>
+        </form>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="100" style="height: 1px; background-color: black "></div>
+    </div>
+    <div fxLayout="row" style="padding: 24px 0;">
+      <div fxFlex="10" fxLayoutAlign="center start">
+        <mat-icon>event</mat-icon>
+      </div>
+      <div fxFlex="1" fxLayoutAlign="center center">
+        <div class="vertical-divider2"></div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign = "center center" style="padding: 16px 0;">
+        <form fxLayout="column"  [formGroup]="newEventForm" (ngSubmit)="onNewEvent()">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field fxFlex="75" class="new-post-content">
+              <textarea matInput placeholder="Type a Event Header" formControlName="eventHeader"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field fxFlex="75" class="new-post-content">
+              <textarea matInput placeholder="Type a Event Content" formControlName="eventContent"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field fxFlex="27.5" class="example-full-width">
+              <input formControlName="eventStartDate" matInput [matDatepicker]="pickerStart" placeholder="Start date">
+              <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+              <mat-datepicker #pickerStart></mat-datepicker>
+            </mat-form-field>
+            <div fxFlex="20"></div>
+            <mat-form-field fxFlex="27.5" class="example-full-width">
+              <input formControlName="eventEndDate" matInput [matDatepicker]="picker" placeholder="End Date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxLayoutAlign="center center"><button mat-flat-button color="primary">Create Event</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

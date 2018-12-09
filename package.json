@@ -1,0 +1,54 @@
+{
+  "name": "almamatters",
+  "version": "0.0.1",
+  "description": "IIITS's alumini nework",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "tester": "jest --detectOpenHandles --watch",
+    "migrate": "tsc --lib ES2015 src/models/migrate.ts && node src/models/migrate.js",
+    "dev": "concurrently --kill-others \"tsc -w -p src\" \"nodemon dist/index.js\"",
+    "serve": "concurrently --kill-others \"tsc -p src\" \"node dist/index.js\"",
+    "prod": "node dist",
+    "webpack:build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvinddeshraj/AlmaMatters.git"
+  },
+  "keywords": [
+    "Alumni"
+  ],
+  "author": "Famous Five",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arvinddeshraj/AlmaMatters/issues"
+  },
+  "homepage": "https://github.com/arvinddeshraj/AlmaMatters#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.3",
+    "@types/node": "^10.9.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "concurrently": "^4.0.1",
+    "jest": "^23.6.0",
+    "node-ts": "^2.1.2",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
