@@ -7,6 +7,7 @@ import profileRoutes from './profileRoutes';
 import searchRoutes from './searchRoutes';
 import postActivityRoutes from './postActivityRoutes';
 import dateRoutes from './dateRoutes'
+import chatRoutes from './chatRoutes'
 
 export default new Map<string, Function>([
     ['/api/', defaultRoutes],
@@ -17,5 +18,6 @@ export default new Map<string, Function>([
     ['/api/profile', profileRoutes],
     ['/api/search', searchRoutes],
     ['/api/postActivity', postActivityRoutes],
-    ['/api/date', dateRoutes]
+    ['/api/date', dateRoutes],
+    ['/api/chats', chatRoutes]
 ]);

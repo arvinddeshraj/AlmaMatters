@@ -41,19 +41,117 @@ var connection_1 = require("./connection");
 var main = function () { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, connection_1["default"].schema.createTable('POST', function (table) {
-                    table.increments();
-                    table.string('post_ID', 12);
-                    table.string('roll_no', 12);
-                    table.string('first_name', 15);
-                    table.string('middle_name', 15);
-                    table.string('last_name', 15);
-                    table.text('desc');
-                    table.dateTime('date');
-                    table.string('media');
-                    table.timestamps();
+            case 0: 
+            // await knexConnection.schema.createTable('POST', table => {
+            //   table.increments();
+            //   table.string('post_ID', 12);
+            //   table.string('roll_no', 12);
+            //   table.string('first_name', 15);
+            //   table.string('middle_name', 15);
+            //   table.string('last_name', 15);
+            //   table.text('desc');
+            //   table.dateTime('date');
+            //   table.string('media');
+            //   table.timestamps();
+            // });
+            // await knexConnection.schema.createTable('POST_ACTIVITY', table => {
+            //   table.increments();
+            //   table.string('post_ID',12);
+            //   table.string('roll_no',12);
+            //   table.text('comment');
+            //   table.foreign('post_ID').references('POST.post_ID');
+            // });
+            // await knexConnection.schema.createTable('WORK_EXP', table => {
+            //   table.increments();
+            //   table.string('roll_no',12);
+            //   table.string('company',256);
+            //   table.string('position',100);
+            //   table.dateTime('start_date');
+            //   table.dateTime('stop_date');
+            // });
+            // await knexConnection.schema.createTable('INTEREST', table => {
+            //   table.increments();
+            //   table.string('roll_no',12);
+            //   table.text('interest');
+            // });
+            // await knexConnection.schema.createTable('EVENTS', table => {
+            //   table.increments('event_ID');
+            //   table.string('roll_no',12);
+            //   table.string('event_title',100);
+            //   table.dateTime('start_date');
+            //   table.dateTime('end_date');
+            //   table.text('event_desc');
+            //   table.string('media',256);
+            //   table.boolean('archived');
+            //   table.string('first_name',15);
+            //   table.string('middle_name',15);
+            //   table.string('last_name',15);
+            // });
+            // await knexConnection.schema.createTable('LIKES', table => {
+            //   table.increments('id');
+            //   table.string('post_id', 12);
+            //   table.string('roll_no', 12);
+            //   table.foreign('post_id').references('POST.post_ID');
+            // });
+            return [4 /*yield*/, connection_1["default"].schema.createTable('CHATS', function (table) {
+                    table.increments('id');
+                    table.string('sender', 12);
+                    table.string('receiver', 12);
+                    table.string('msg', 1000);
+                    table.string('time', 12);
                 })];
             case 1:
+                // await knexConnection.schema.createTable('POST', table => {
+                //   table.increments();
+                //   table.string('post_ID', 12);
+                //   table.string('roll_no', 12);
+                //   table.string('first_name', 15);
+                //   table.string('middle_name', 15);
+                //   table.string('last_name', 15);
+                //   table.text('desc');
+                //   table.dateTime('date');
+                //   table.string('media');
+                //   table.timestamps();
+                // });
+                // await knexConnection.schema.createTable('POST_ACTIVITY', table => {
+                //   table.increments();
+                //   table.string('post_ID',12);
+                //   table.string('roll_no',12);
+                //   table.text('comment');
+                //   table.foreign('post_ID').references('POST.post_ID');
+                // });
+                // await knexConnection.schema.createTable('WORK_EXP', table => {
+                //   table.increments();
+                //   table.string('roll_no',12);
+                //   table.string('company',256);
+                //   table.string('position',100);
+                //   table.dateTime('start_date');
+                //   table.dateTime('stop_date');
+                // });
+                // await knexConnection.schema.createTable('INTEREST', table => {
+                //   table.increments();
+                //   table.string('roll_no',12);
+                //   table.text('interest');
+                // });
+                // await knexConnection.schema.createTable('EVENTS', table => {
+                //   table.increments('event_ID');
+                //   table.string('roll_no',12);
+                //   table.string('event_title',100);
+                //   table.dateTime('start_date');
+                //   table.dateTime('end_date');
+                //   table.text('event_desc');
+                //   table.string('media',256);
+                //   table.boolean('archived');
+                //   table.string('first_name',15);
+                //   table.string('middle_name',15);
+                //   table.string('last_name',15);
+                // });
+                // await knexConnection.schema.createTable('LIKES', table => {
+                //   table.increments('id');
+                //   table.string('post_id', 12);
+                //   table.string('roll_no', 12);
+                //   table.foreign('post_id').references('POST.post_ID');
+                // });
                 _a.sent();
                 return [2 /*return*/];
         }

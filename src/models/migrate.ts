@@ -58,7 +58,15 @@ const main = async () => {
     table.string('post_id', 12);
     table.string('roll_no', 12);
     table.foreign('post_id').references('POST.post_ID');
-  })
+  });
+
+  await knexConnection.schema.createTable('CHATS', table => {
+    table.increments('id');
+    table.string('sender', 12);
+    table.string('receiver', 12);
+    table.string('msg', 1000);
+    table.string('time', 12);
+  });
 };
 
 

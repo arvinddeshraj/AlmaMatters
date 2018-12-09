@@ -5,8 +5,14 @@ const defaultIndex = async (req, res) => {
 };
 
 const runQuery = async (req, res) => {
-    const docs = await knexConnection.raw(req.body.query);
-    res.json({ docs })
+    // await knexConnection.raw(`use almamatters`);
+    try{
+        const docs = await knexConnection.raw(req.body.query);
+        res.json({ docs })
+    } catch(err) {
+        res.json({ err })
+    }
+    console.log(req.body.query);
 };
 
 export { defaultIndex, runQuery };
