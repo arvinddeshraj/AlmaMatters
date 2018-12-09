@@ -7,7 +7,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { ChatComponent } from './component/chat/chat.component';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +22,9 @@ const config: SocketIoConfig = { url: 'http://10.0.32.125:3000', options: {} };
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    RouterModule,
+    FormsModule,
+    MatToolbarModule,
     SocketIoModule.forRoot(config)
   ],
   declarations: [ChatDashboardComponent, RecentChatsComponent, ChatComponent]

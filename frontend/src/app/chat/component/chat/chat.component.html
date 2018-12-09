@@ -1,11 +1,34 @@
 <div fxFlex="100" fxLayout="column">
-  <div class="chat-window" fxFlex="90"></div>
-  <div class="chat-message" fxLayout = "row" fxFlex="10">
+  <div class="chat-window" fxFlex="90">
+    <div class="wrapper">
+      <div class="dialog">
+        <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
+          {{student.Student_First_Name}} {{student.Student_Last_name}}
+        </mat-toolbar>
+
+        <div class="messages">
+
+          <ng-container *ngFor="let message of messages">
+
+            <div class="message-row" [ngClass]="{ 'from': message.sender !== userId,
+                                              'to':   message.sender === userId }">
+              <div class="message">
+                <span [innerHtml]="message.msg"></span>
+              </div>
+            </div>
+
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="send-message" fxFlex="10" fxLayout = "row" (click)="message.click()">
     <mat-form-field fxFlex = "90">
-      <textarea matInput #message maxlength="256" placeholder="Message"></textarea>
-      <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+      <input autofocus autocomplete="off" matInput #message [(ngModel)]="msg" (keyup.enter)="sendMsg()" maxlength="256"
+        placeholder="Message">
       <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
     </mat-form-field>
-    <div fxFlex = "10" fxLayoutAlign = "center center"><button mat-raised-button color="primary">Primary</button></div>
+    <div fxFlex="10" fxLayoutAlign="center center"><button mat-raised-button color="primary" (click)="sendMsg()">Send</button></div>
   </div>
 </div>

@@ -51,6 +51,7 @@
       <mat-card-content>
         <p *ngIf = "s.Student_Registered_Degree == '1'">B.Tech</p>
         <p *ngIf = "s.Student_Registered_Degree == '2'">B.Tech + Hons</p>
+        <p><a [routerLink] = "['/chat/'+s.Student_ID]">Message</a></p>
       </mat-card-content>
     </mat-card>
     <br>

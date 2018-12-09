@@ -10,20 +10,20 @@ import { DirectoryService } from '../../../services/directory.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private dirService : DirectoryService) { }
-  value = ''
-  Option = ''
-  showBatchOpt = false
-  showBranchOpt = false
+  constructor(private dirService: DirectoryService) { }
+  value = '';
+  Option = '';
+  showBatchOpt = false;
+  showBranchOpt = false;
   finalCriteria: string;
   criteria: string[] = ['Batch', 'Branch'];
-  selectedBatch = ''
-  selectedBranch = ''
-  students = []
-  showingStudents = []
+  selectedBatch = '';
+  selectedBranch = '';
+  students = [];
+  showingStudents = [];
   // typesOfShoes: string[] = ['Batch', 'Branch'];
-  batches :any[] = []
-  branches :any[] = [
+  batches: any[] = [];
+  branches: any[] = [
     {value: 'b1' , viewValue : 'B.Tech'},
     {value: 'b2' , viewValue : 'B.Tech+Hons'},
     // {value: 'b3' , viewValue : 'CSE-Hons'},
@@ -34,22 +34,23 @@ export class SearchComponent implements OnInit {
   //   {value: 'tacos-2', viewValue: 'Tacos'}
   // ];
   ngOnInit() {
-    this.getAll()
-    var count = 0
+    this.getAll();
+    const count = 0;
     // for (var i = 2016 ; i<new Date().getFullYear()+4 ; i++){
     //   count +=1
 
-    // } 
+    // }
     this.batches = Array.from(Array(new Date().getFullYear()+4-2016).keys()).map(e => ({value:e,viewValue:2016+e}))
     console.log(this.batches)
   }
-  
+
   getAll() {
     this.dirService.getAll(localStorage.getItem('x-auth')).subscribe(
       res => {
         this.students = JSON.parse(JSON.stringify(res));
-        this.copyStudents(this.students)
-        console.log(res)
+        console.log(this.students[0]);
+        this.copyStudents(this.students);
+        console.log(res);
       },
       err => console.log(err)
     );
@@ -57,14 +58,14 @@ export class SearchComponent implements OnInit {
 
   }
   copyStudents(arr) {
-    this.showingStudents = arr
+    this.showingStudents = arr;
   }
   getBatch() {
-    this.showingStudents = []
-    for(let i of this.students){
+    this.showingStudents = [];
+    for (const i of this.students) {
       // var pat = /^2017*/;
-      if (i.Student_ID.split(''+this.selectedBatch).length>1) {
-        this.showingStudents.push(i)
+      if (i.Student_ID.split('' + this.selectedBatch).length > 1) {
+        this.showingStudents.push(i);
       }
     }
   }

@@ -32,7 +32,8 @@ import { ChatDashboardComponent } from './chat/pages/chat-dashboard/chat-dashboa
 const appRoutes = [{
   path: '',
   component: LandingPageComponent
-},{
+},
+{
   path: 'dashboard',
   component: DashboardComponent
 },
@@ -57,7 +58,7 @@ const appRoutes = [{
   component: CallbackComponent
 },
 {
-  path: 'chat',
+  path: 'chat/:id',
   component: ChatDashboardComponent
 }
 ];

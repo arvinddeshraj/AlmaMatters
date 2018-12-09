@@ -10,11 +10,11 @@ import * as UserActions from '../actions/user.action';
   styleUrls: ['./callback.component.scss']
 })
 export class CallbackComponent implements OnInit {
-  token = ''
+  token = '';
   constructor(private route: ActivatedRoute, private authService: AuthService, private store: Store<AppState>, private router: Router) { }
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params) //log the entire params object
+      console.log(params); // log the entire params object
       this.token = params['token'];
       this.authService.getToken(this.token).subscribe(
         res => {
@@ -22,6 +22,7 @@ export class CallbackComponent implements OnInit {
           const body = JSON.parse(JSON.stringify(res));
           localStorage.removeItem('x-auth');
           localStorage.setItem('x-auth', body.token);
+          // tslint:disable-next-line:max-line-length
           this.store.dispatch(new UserActions.UpdateUser({token: body.token, firstName: body.user[0]['Student_First_Name'], lastName: body.user[0]['Student_Last_name']}))
           this.router.navigate(['/dashboard']);
         },

@@ -55,14 +55,14 @@ export class MainDashboardComponent implements OnInit {
   }
   onNewEvent () {
     const startDate = (new Date(this.newEventForm.value.eventStartDate)).toISOString();
-    let endDate = (new Date(this.newEventForm.value.eventEndDate)).toISOString();
+    const endDate = (new Date(this.newEventForm.value.eventEndDate)).toISOString();
     // if (startDate === endDate) +endDate + 86400;
     const header = this.newEventForm.value.eventHeader;
     const eventContent = this.newEventForm.value.eventContent;
     console.log(header, eventContent,startDate, endDate);
-    this.eventService.createEvent(header, eventContent,startDate, endDate,localStorage.getItem('x-auth')).subscribe(
+    this.eventService.createEvent(header, eventContent, startDate, endDate, localStorage.getItem('x-auth')).subscribe(
       res => {
-        console.log(res)
+        console.log(res);
         this.newEventForm.reset();
         this.openEventCreatedSnackBar();
       },

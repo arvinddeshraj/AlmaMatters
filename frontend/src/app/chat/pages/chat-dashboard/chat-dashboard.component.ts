@@ -11,6 +11,7 @@ export class ChatDashboardComponent implements OnInit {
   constructor(private socket: Socket) { }
 
   ngOnInit() {
+    this.socket.emit('room', { user: localStorage.getItem('x-auth') });
   }
 
 }

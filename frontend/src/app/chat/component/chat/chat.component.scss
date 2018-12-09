@@ -1,3 +1,90 @@
 .chat-window{
     overflow:hidden;
 }
+
+.wrapper {
+//   margin: 2vh 15vw;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 40px -10px rgba(0, 0, 0, 0.50);
+}
+
+
+
+.toolbar {
+  position: relative;
+  top: 0;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  font-weight: 300;
+}
+
+.messages {
+  overflow: auto;
+  padding: 64px 0;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.message-row {
+  padding: 0 16px;
+  margin: 8px;
+}
+
+.message {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 16px;
+  font-weight: 300;
+  margin: 5px 0;
+}
+
+.message-row.to {
+  text-align: right;
+
+  .message {
+    background-color: #2095FE;
+    color: #fff;
+  }
+}
+
+.message-row.from {
+  text-align: left;
+
+  .message {
+    background-color: #E5E4E9;
+    color: #363636;
+  }
+}
+
+.message-row.to+.message-row.to,
+.message-row.from+.message-row.from {
+  margin-top: -10px;
+}
+
+.send-message {
+  height: 64px;
+  border-top: 1px solid #ccc;
+  position: relative;
+  bottom: 0;
+  padding: 0 16px;
+  background-color: #fafafa;
+}
+
+::ng-deep .send-message .mat-form-field-underline {
+  display: none !important;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
