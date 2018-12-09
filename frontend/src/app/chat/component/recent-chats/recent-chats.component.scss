@@ -1,0 +1,17 @@
+@import '../../../../theme';
+
+.recent-chats-wrapper {
+    background-image: linear-gradient(mat-color($mat-app-primary, 900), mat-color($mat-app-primary, 600), mat-color($mat-app-primary, 900));
+    color: white;
+    height: 95vh;
+    margin: 0 0 0 0;
+}
+
+.control-bar { 
+    padding: 20px 10px 20px 20px;
+}
+
+.divider {
+    height: 1px;
+    background: white;
+}

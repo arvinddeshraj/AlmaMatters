@@ -1,0 +1,11 @@
+<div fxFlex="100" fxLayout="column">
+  <div class="chat-window" fxFlex="90"></div>
+  <div class="chat-message" fxLayout = "row" fxFlex="10">
+    <mat-form-field fxFlex = "90">
+      <textarea matInput #message maxlength="256" placeholder="Message"></textarea>
+      <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+    <div fxFlex = "10" fxLayoutAlign = "center center"><button mat-raised-button color="primary">Primary</button></div>
+  </div>
+</div>

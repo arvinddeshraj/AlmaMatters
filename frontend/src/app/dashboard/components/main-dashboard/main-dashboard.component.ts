@@ -15,6 +15,7 @@ import {MatSnackBar} from '@angular/material';
 export class MainDashboardComponent implements OnInit {
   newPostForm: FormGroup;
   newEventForm: FormGroup;
+  // tslint:disable-next-line:max-line-length
   constructor(private store: Store<AppState>, private postService: PostsService, private eventService: EventService, public snackBar: MatSnackBar) { 
     this.minDate = Date.now().toLocaleString();
   }

@@ -22,9 +22,11 @@ import { CallbackComponent } from './callback/callback.component';
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './directory/pages/search/search.component';
-import { FormsModule } from '@angular/forms';  
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { eventReducer } from './reducers/event.reducer';
+import { ChatModule } from './chat/chat.module';
+import { ChatDashboardComponent } from './chat/pages/chat-dashboard/chat-dashboard.component';
 
 
 const appRoutes = [{
@@ -53,6 +55,10 @@ const appRoutes = [{
 {
   path: 'iauth/iiits/callback/:token',
   component: CallbackComponent
+},
+{
+  path: 'chat',
+  component: ChatDashboardComponent
 }
 ];
 
@@ -78,6 +84,7 @@ const appRoutes = [{
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ChatModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

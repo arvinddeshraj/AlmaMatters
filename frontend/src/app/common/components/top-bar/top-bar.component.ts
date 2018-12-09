@@ -24,7 +24,7 @@ export class TopBarComponent implements OnInit {
       console.log(localStorage['x-auth']);
       this.authService.getDetails(localStorage['x-auth']);
     } else {
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
     }
   }
 
