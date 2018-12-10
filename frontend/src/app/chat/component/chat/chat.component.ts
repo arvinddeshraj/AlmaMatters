@@ -21,7 +21,7 @@ export class ChatComponent implements OnInit {
   messages = [];
   ngOnInit() {
     this.socket.on('received', (data) => {
-      if (data.receiver === this.studentId) {
+      if (data.receiver === this.studentId || data.receiver === this.studentId) {
         this.messages.push(data);
         console.log(data);
       }

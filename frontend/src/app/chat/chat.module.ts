@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
-const config: SocketIoConfig = { url: 'http://10.0.48.101:3000', options: {} };
+const config: SocketIoConfig = { url: 'http://192.168.43.119:3000', options: {} };
 
 @NgModule({
   imports: [
