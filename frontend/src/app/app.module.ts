@@ -27,6 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { eventReducer } from './reducers/event.reducer';
 import { ChatModule } from './chat/chat.module';
 import { ChatDashboardComponent } from './chat/pages/chat-dashboard/chat-dashboard.component';
+import { EventsListComponent } from './events/pages/events-list/events-list.component';
+import { EventsModule } from './events/events.module';
 
 
 const appRoutes = [{
@@ -60,6 +62,10 @@ const appRoutes = [{
 {
   path: 'chat/:id',
   component: ChatDashboardComponent
+},
+{
+  path: 'events',
+  component: EventsListComponent
 }
 ];
 
@@ -86,6 +92,7 @@ const appRoutes = [{
     FormsModule,
     ReactiveFormsModule,
     ChatModule,
+    EventsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

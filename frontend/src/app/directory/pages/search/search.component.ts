@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
 
     // }
     this.batches = Array.from(Array(new Date().getFullYear()+4-2016).keys()).map(e => ({value:e,viewValue:2016+e}))
-    console.log(this.batches)
+    console.log(this.batches);
   }
 
   getAll() {
@@ -57,6 +57,10 @@ export class SearchComponent implements OnInit {
     // console.log(this.students)
 
   }
+  // filter() {
+    
+  //   this.filteredEvents = this.registeredEvents.filter(userData => userData.name.indexOf(filterValue) >= 0);
+  // }
   copyStudents(arr) {
     this.showingStudents = arr;
   }

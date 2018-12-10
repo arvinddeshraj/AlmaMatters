@@ -9,10 +9,12 @@
     <div>Page index: {{pageEvent.pageIndex}}</div>
   </div> -->
 
-  <div fxLayout="row wrap">
-    <div fxFlex = "25" *ngFor="let post of posts; let i = index" style="padding:1%">
+  <div fxLayout="row wrap" *ngFor="let post of posts; let i = index">
+    <div fxFlex = "33"></div>
+    <div fxFlex = "34" style="padding:1%">
       <app-single-post [singlePost] = "post"></app-single-post>
     </div>
+    <div fxFlex = "33"></div>
   </div>
 
 

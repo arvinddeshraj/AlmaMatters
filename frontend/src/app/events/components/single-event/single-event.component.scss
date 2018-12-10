@@ -1,0 +1,13 @@
+@import '../../../../theme';
+.example-card {
+  max-width: 900px;
+}
+
+.example-header-image {
+  background-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/photo-512.png');
+  background-size: cover;
+}
+
+.accent-color {
+    color:mat-color($mat-app-accent, 500);
+}

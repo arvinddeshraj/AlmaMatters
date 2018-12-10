@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target": "http://10.0.32.125:3000/",
+        "target": "http://10.0.48.101:3000/",
         "secure": false,
         "logLevel": "debug"
     }

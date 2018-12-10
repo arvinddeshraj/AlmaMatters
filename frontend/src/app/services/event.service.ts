@@ -12,6 +12,7 @@ export class EventService {
   constructor(private http: HttpClient, private store: Store<AppState>) { }
   events = [];
   createEvent(eventHeader, eventContent, startDate, endDate, token) {
+    // tslint:disable-next-line:max-line-length
     return this.http.post('/api/event/create', {event_tit: eventHeader, description: eventContent, st_date: startDate, end_date: endDate}, {headers: {'x-auth': token}});
   }
   getMyEvents(token) {
@@ -21,7 +22,7 @@ export class EventService {
         console.log(body);
         const events = [];
         for (let i of body.events) {
-          i.progress = Math.floor(Math.random()*100);
+          i.progress = Math.floor(Math.random() * 100);
           events.push(i);
         }
         console.log(events);
@@ -30,10 +31,14 @@ export class EventService {
         return this.events;
       },
       err => console.log(err)
-    )
+    );
   }
   getMyEvent(token) {
     return this.http.get('/api/event/getMyEvents', {headers: {'x-auth': token}});
+  }
+  getAllEvents (token, starting, ending) {
+    // tslint:disable-next-line:max-line-length
+    return this.http.get('/api/event/all?initialEventNumber=' + starting + '&finalEventNumber=' + ending, { headers: { 'x-auth': token } });
   }
   getEventsObservable() {
     return of(this.events);

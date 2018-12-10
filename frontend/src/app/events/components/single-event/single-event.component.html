@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{singleEvent.first_name + ' ' + singleEvent.last_name}}</mat-card-title>
+    <mat-card-subtitle>Batch 2020</mat-card-subtitle>
+  </mat-card-header>
+<mat-card-title class="accent-color">{{singleEvent.event_title}}</mat-card-title>
+  <mat-card-content>
+    <p>
+      {{singleEvent.event_desc}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayout = "row">
+    <span fxFlex = "50"><strong>Start Date:</strong><span class="accent-color">{{singleEvent.start_date | date:"dd/MM/yy"}}</span></span>
+    <span fxFlex = "50"><strong>End Date:</strong><span class="accent-color">{{singleEvent.end_date | date:"dd/MM/yy"}}</span></span>
+  </mat-card-actions>
+  <mat-card-actions>
+    <button mat-button>
+      <mat-icon>thumb_up_outline</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>comment</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

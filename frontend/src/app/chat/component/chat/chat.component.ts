@@ -21,10 +21,13 @@ export class ChatComponent implements OnInit {
   messages = [];
   ngOnInit() {
     this.socket.on('received', (data) => {
-      this.messages.push(data);
-      console.log(data);
+      if (data.receiver === this.studentId) {
+        this.messages.push(data);
+        console.log(data);
+      }
     });
     this.route.params.subscribe(params => {
+      this.messages = [];
       console.log(params);
       this.studentId = params.id;
       this.chatService.getChat(localStorage.getItem('x-auth'), params.id, 0, 50).subscribe(

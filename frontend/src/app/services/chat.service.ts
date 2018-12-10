@@ -11,4 +11,8 @@ export class ChatService {
   getChat (token, roll, indexStart, indexEnd) {
     return this.http.post('/api/chats/get', { roll, indexStart, indexEnd }, { headers: { 'x-auth': token } });
   }
+
+  getRecentChats (token) {
+    return this.http.get('/api/chats/getrecent', { headers: { 'x-auth': token } });
+  }
 }

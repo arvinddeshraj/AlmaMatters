@@ -24,12 +24,15 @@ export class PostComponent implements OnInit {
   arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
   posts = [];
   ngOnInit() {
-    this.getPosts(0, 12)
+    this.getPosts(0, 12);
   }
 
   getPosts (st, ed) {
-    this.postSerivce.getPosts(st,ed,localStorage.getItem('x-auth')).subscribe(
-      res => this.posts = JSON.parse(JSON.stringify(res)).fetchedPosts,
+    this.postSerivce.getPosts(st, ed, localStorage.getItem('x-auth')).subscribe(
+      res => {
+        this.posts = JSON.parse(JSON.stringify(res)).fetchedPosts;
+        this.length = JSON.parse(JSON.stringify(res)).total[0]['count(*)'];
+      },
       err => console.log(err)
     );
   }

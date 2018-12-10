@@ -19,6 +19,6 @@ export class PostsService {
     return this.http.get('/api/post/get?initialPostNumber=' + starting + '&finalPostNumber=' + ending, {headers: {'x-auth': token}});
   }
   delPost(ID, token) {
-    return this.http.post('/api/post/delete',{postId: ID }, {headers: {'x-auth': token}});
+    return this.http.post('/api/post/delete', {postId: ID }, {headers: {'x-auth': token}});
   }
 }
