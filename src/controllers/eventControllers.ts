@@ -25,7 +25,8 @@ const deleteEvent = async (req, res) => {
 
 // retrieve Events from DB for primary feed.
 const getEvents = async (req, res) => {
-	const {initialEventNumber, finalEventNumber} = req.body;
+	const {initialEventNumber, finalEventNumber} = req.query;
+	console.log(initialEventNumber, finalEventNumber)
 	let lim = parseInt(finalEventNumber) - parseInt(initialEventNumber);
 	console.log('initial',initialEventNumber,'finalPostNumber',finalEventNumber)
 	const fetchedEvents = await knexConnection.select().table('EVENTS').orderBy('start_date', 'event_desc').limit(lim).offset(parseInt(initialEventNumber));

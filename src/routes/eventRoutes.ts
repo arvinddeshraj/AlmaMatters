@@ -11,7 +11,7 @@ const router = new Router();
 
 router.post('/create', createEvent);
 router.post('/delete', deleteEvent);
-router.post('/all', getEvents);
+router.get('/all', getEvents);
 router.get('/getMyEvents', getAuthenticatedUserEvents);
 
 export default router;
